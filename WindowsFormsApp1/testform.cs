@@ -19,11 +19,15 @@ namespace WindowsFormsApp1
         }
         private string ime;
         private List<Prasanje> prasanja =  new List<Prasanje> { };
-        int points = 0;
-        int count = 0;
-        int brojnaprasanja = 5;
-        int[] randombroevi ;
         
+        int count = 0;
+        int brojnaprasanja;
+        int[] randombroevi;
+        string[] odgovori;
+
+        public void Brojnaprasanja(int n){
+            brojnaprasanja = n;
+        }
 
         public void setIme(string ime)
         {
@@ -33,10 +37,13 @@ namespace WindowsFormsApp1
         protected void testform_Load(object sender, EventArgs e)
         {
             lname.Text += ime;
-            string appPath = Path.GetDirectoryName(Application.ExecutablePath);
-            string filePath = (appPath + "\\Prasanja12.txt");
+            string filePath = (Environment.CurrentDirectory + "\\Prasanja12.txt");
             string[] lines = File.ReadAllLines(filePath);
-            for(int i = 0; i < lines.Length; i++)
+            string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
+            string[] lines1 = File.ReadAllLines(filePath1);
+            brojnaprasanja = Convert.ToInt32(lines1[0]);
+            
+            for (int i = 0; i < lines.Length; i++)
             {
                 string[] parts = lines[i].Split(',');
                 List<string> odgovor = new List<string> {};
@@ -46,6 +53,7 @@ namespace WindowsFormsApp1
                 odgovor.Add(parts[4]);
                 prasanja.Add(new Prasanje(parts[0], odgovor.ToArray(), parts[5]));
             }
+            odgovori = new string[brojnaprasanja];
             randombroevi = random();
             load(randombroevi[count]);
             count++;
@@ -58,11 +66,8 @@ namespace WindowsFormsApp1
             radioButton2.Text = prasanja[i].Ponudi[1];
             radioButton3.Text = prasanja[i].Ponudi[2];
             radioButton4.Text = prasanja[i].Ponudi[3];
-            if(prasanja[i].Tocen == Radiocheck1())
-            {
-                points++;
-            }
-            
+            odgovori[count] = Radiocheck1();
+
         }
 
         private void radioButton3_CheckedChanged(object sender, EventArgs e)
@@ -94,7 +99,7 @@ namespace WindowsFormsApp1
             for (int i = 0; i < brojnaprasanja; i++)
             {
                 int n;
-                do n = r.Next(0,brojnaprasanja);
+                do n = r.Next(0,prasanja.Count);
                 while (a.Contains(n));
                 a.Add(n);
             }
@@ -103,12 +108,21 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             
-            if(count == brojnaprasanja - 1)
+
+            if (count == brojnaprasanja - 1)
             {
                 button1.Text = "Заврши";
             }
             if(count == brojnaprasanja)
             {
+                int points = 0;
+                for (int i = 0; i < randombroevi.Length; i++)
+                {
+                    if (odgovori[i] == prasanja[randombroevi[i]].Tocen)
+                    {
+                        points++;
+                    }
+                }
                 this.Hide();
                 MessageBox.Show("Точни прашања: " + points);
             }
@@ -117,6 +131,7 @@ namespace WindowsFormsApp1
             {
                 button2.Enabled = true;
             }
+            
             count++;
         }
 
@@ -133,7 +148,6 @@ namespace WindowsFormsApp1
                 button2.Enabled = false;
             }
             count++;
-
         }
     }
 }
