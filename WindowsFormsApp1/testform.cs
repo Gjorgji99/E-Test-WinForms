@@ -28,7 +28,6 @@ namespace WindowsFormsApp1
         public void Brojnaprasanja(int n){
             brojnaprasanja = n;
         }
-
         public void setIme(string ime)
         {
             this.ime = ime;
@@ -66,14 +65,11 @@ namespace WindowsFormsApp1
             radioButton2.Text = prasanja[i].Ponudi[1];
             radioButton3.Text = prasanja[i].Ponudi[2];
             radioButton4.Text = prasanja[i].Ponudi[3];
-            odgovori[count] = Radiocheck1();
+           
 
         }
 
-        private void radioButton3_CheckedChanged(object sender, EventArgs e)
-        {
-            
-        }
+       
         private string Radiocheck1()
         {
             
@@ -89,7 +85,6 @@ namespace WindowsFormsApp1
             {
                 return radioButton3.Text;
             }
-            
             return radioButton4.Text;
         }
         private int[] random()
@@ -108,16 +103,23 @@ namespace WindowsFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             
-
+            odgovori[--count] = Radiocheck1();
+            count++;
             if (count == brojnaprasanja - 1)
             {
                 button1.Text = "Заврши";
             }
-            if(count == brojnaprasanja)
+            if (count > 0)
             {
+                button2.Enabled = true;
+            }
+            if (count == brojnaprasanja)
+            {
+                
                 int points = 0;
                 for (int i = 0; i < randombroevi.Length; i++)
                 {
+                    
                     if (odgovori[i] == prasanja[randombroevi[i]].Tocen)
                     {
                         points++;
@@ -126,13 +128,14 @@ namespace WindowsFormsApp1
                 this.Hide();
                 MessageBox.Show("Точни прашања: " + points);
             }
-                load(randombroevi[count]);
-            if (count > 0)
+            else
             {
-                button2.Enabled = true;
+                
+                
+                load(randombroevi[count]);
+                count++;
             }
-            
-            count++;
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -149,5 +152,7 @@ namespace WindowsFormsApp1
             }
             count++;
         }
+
+     
     }
 }
