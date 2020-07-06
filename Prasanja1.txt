@@ -1,0 +1,5 @@
+Што е RAM?,Read-Only Memory,Random-Access Memory,Read-Access Memory,Random-Only Memory,Random-Access Memory
+Кој е основач на Linux-Kernel?,Linus Torvalds,Richard Stallman,Bill Gates,Dennis Ritchie,Linus Torvalds
+Кој од овие не е програмски јазик?,Java,JavaSript,C++,Pascal,JavaScript
+Кога е создаден Android?,2005,2007,2003,2004,2005
+Програмскиот јазик Pascal го создал?,Dennis Ritche,Richard Stallman,Niklaus Wirth,Brendan Eich,Niklaus Wirth
