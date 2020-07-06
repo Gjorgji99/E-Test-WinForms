@@ -32,7 +32,7 @@ namespace WindowsFormsApp1
 
         private void button2_Click(object sender, EventArgs e)
         {
-            ProfesorskoMeni o = new ProfesorskoMeni();
+            pass o = new pass();
             o.ShowDialog();
         }
     }

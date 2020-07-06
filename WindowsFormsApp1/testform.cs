@@ -126,7 +126,7 @@ namespace WindowsFormsApp1
                     }
                 }
                 this.Hide();
-                MessageBox.Show("Точни прашања: " + points);
+                MessageBox.Show("Точни прашања: " + points + "/" + randombroevi.Length);
             }
             else
             {

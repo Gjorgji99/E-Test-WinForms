@@ -43,9 +43,9 @@
             this.lname.AutoSize = true;
             this.lname.Location = new System.Drawing.Point(37, 26);
             this.lname.Name = "lname";
-            this.lname.Size = new System.Drawing.Size(100, 17);
+            this.lname.Size = new System.Drawing.Size(107, 17);
             this.lname.TabIndex = 0;
-            this.lname.Text = "Ime i Prezime: ";
+            this.lname.Text = "Име и презиме";
             // 
             // lprasanje
             // 
@@ -65,7 +65,6 @@
             this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
-            
             // 
             // radioButton2
             // 
@@ -76,7 +75,6 @@
             this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = true;
-            
             // 
             // radioButton3
             // 
@@ -87,7 +85,6 @@
             this.radioButton3.TabIndex = 4;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = true;
-            
             // 
             // radioButton4
             // 
@@ -98,7 +95,6 @@
             this.radioButton4.TabIndex = 5;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = true;
-            
             // 
             // button1
             // 

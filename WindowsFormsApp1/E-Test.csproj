@@ -52,6 +52,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="pass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="pass.Designer.cs">
+      <DependentUpon>pass.cs</DependentUpon>
+    </Compile>
     <Compile Include="Prasanje.cs" />
     <Compile Include="ProfesorskoMeni.cs">
       <SubType>Form</SubType>
@@ -69,6 +75,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="pass.resx">
+      <DependentUpon>pass.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProfesorskoMeni.resx">
       <DependentUpon>ProfesorskoMeni.cs</DependentUpon>
