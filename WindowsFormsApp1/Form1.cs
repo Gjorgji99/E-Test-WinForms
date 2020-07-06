@@ -29,5 +29,11 @@ namespace WindowsFormsApp1
             this.Hide();
             test.ShowDialog();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ProfesorskoMeni o = new ProfesorskoMeni();
+            o.ShowDialog();
+        }
     }
 }
