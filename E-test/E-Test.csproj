@@ -6,12 +6,27 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{86D69385-0D94-4B45-AA3D-625DDDC214BE}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WindowsFormsApp1</RootNamespace>
-    <AssemblyName>WindowsFormsApp1</AssemblyName>
+    <RootNamespace>Etest</RootNamespace>
+    <AssemblyName>Etest</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -46,41 +61,41 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Etest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Etest.Designer.cs">
+      <DependentUpon>Etest.cs</DependentUpon>
     </Compile>
-    <Compile Include="pass.cs">
+    <Compile Include="passwordForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="pass.Designer.cs">
-      <DependentUpon>pass.cs</DependentUpon>
+    <Compile Include="passwordForm.Designer.cs">
+      <DependentUpon>passwordForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prasanje.cs" />
-    <Compile Include="ProfesorskoMeni.cs">
+    <Compile Include="Question.cs" />
+    <Compile Include="ProfesorMenu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ProfesorskoMeni.Designer.cs">
-      <DependentUpon>ProfesorskoMeni.cs</DependentUpon>
+    <Compile Include="ProfesorMenu.Designer.cs">
+      <DependentUpon>ProfesorMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="testform.cs">
+    <Compile Include="QuestionsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="testform.Designer.cs">
-      <DependentUpon>testform.cs</DependentUpon>
+    <Compile Include="QuestionsForm.Designer.cs">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Etest.resx">
+      <DependentUpon>Etest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="pass.resx">
-      <DependentUpon>pass.cs</DependentUpon>
+    <EmbeddedResource Include="passwordForm.resx">
+      <DependentUpon>passwordForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ProfesorskoMeni.resx">
-      <DependentUpon>ProfesorskoMeni.cs</DependentUpon>
+    <EmbeddedResource Include="ProfesorMenu.resx">
+      <DependentUpon>ProfesorMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,9 +105,10 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="testform.resx">
-      <DependentUpon>testform.cs</DependentUpon>
+    <EmbeddedResource Include="QuestionsForm.resx">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -106,6 +122,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

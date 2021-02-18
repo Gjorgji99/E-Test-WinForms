@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Etest
 {
-    public partial class ProfesorskoMeni : Form
+    public partial class ProfesorMenu : Form
     {
-        public ProfesorskoMeni()
+        public ProfesorMenu()
         {
             InitializeComponent();
         }
@@ -25,27 +25,24 @@ namespace WindowsFormsApp1
         {
             filePath = Path.Combine(Environment.CurrentDirectory + "\\Prasanja12.txt");
             string[] lines = File.ReadAllLines(filePath);
-            listBox1.Items.AddRange(lines);
+            questionsBox.Items.AddRange(lines);
             string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
             List<string> lines1 = File.ReadAllLines(filePath1).ToList();
             string broj = lines1.ElementAt(0);
-            textBox1.Text = broj;
+            numberQuestionsBox.Text = broj;
         }
 
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
 
-        }
 
         private void button2_Click(object sender, EventArgs e)
         {
             
             List<string> lines = File.ReadAllLines(filePath).ToList();
-            if (listBox1.SelectedIndex != -1)
+            if (questionsBox.SelectedIndex != -1)
             {
-                lines.RemoveAt(listBox1.SelectedIndex);
+                lines.RemoveAt(questionsBox.SelectedIndex);
                 File.WriteAllLines(filePath, lines);
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                questionsBox.Items.RemoveAt(questionsBox.SelectedIndex);
             }
         }
 
@@ -56,11 +53,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tb1.Text == tbt.Text || tb2.Text == tbt.Text || tb3.Text == tbt.Text || tb4.Text == tbt.Text) {
+            if (firstBox.Text == correctBox.Text || secoundBox.Text == correctBox.Text || thirdBox.Text == correctBox.Text || fourBox.Text == correctBox.Text) {
                 List<string> lines = File.ReadAllLines(filePath).ToList();
-                string line = Tbnaslov.Text + "," + tb1.Text + "," + tb2.Text + "," + tb3.Text + "," + tb4.Text + "," + tbt.Text;
+                string line = titleBox.Text + "," + firstBox.Text + "," + secoundBox.Text + "," + thirdBox.Text + "," + fourBox.Text + "," + correctBox.Text;
                 lines.Add(line);
-                listBox1.Items.Add(line);
+                questionsBox.Items.Add(line);
                 File.WriteAllLines(filePath, lines);
             }
             else
@@ -73,9 +70,9 @@ namespace WindowsFormsApp1
         {
             string filePath = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
             List<string> lines = new List<string> { };
-            if (Convert.ToInt32(textBox1.Text) <= listBox1.Items.Count)
+            if (Convert.ToInt32(numberQuestionsBox.Text) <= questionsBox.Items.Count)
             {
-                lines.Add(textBox1.Text);
+                lines.Add(numberQuestionsBox.Text);
                 File.WriteAllLines(filePath, lines);
             }
             else

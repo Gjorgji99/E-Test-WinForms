@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Etest
 {
-    public partial class pass : Form
+    public partial class passwordForm : Form
     {
-        public pass()
+        public passwordForm()
         {
             InitializeComponent();
         }
@@ -21,11 +21,21 @@ namespace WindowsFormsApp1
         {
             if (textBox1.Text == "Profesor")
             {
-                ProfesorskoMeni o = new ProfesorskoMeni();
+                ProfesorMenu o = new ProfesorMenu();
                 o.ShowDialog();
             }
             else
                 MessageBox.Show("Внесовте погрешен пасворд");
+        }
+
+        private void pass_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
