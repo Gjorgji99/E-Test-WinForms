@@ -25,11 +25,11 @@ namespace WindowsFormsApp1
         {
             filePath = Path.Combine(Environment.CurrentDirectory + "\\Prasanja12.txt");
             string[] lines = File.ReadAllLines(filePath);
-            listBox1.Items.AddRange(lines);
+            questionsBox.Items.AddRange(lines);
             string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
             List<string> lines1 = File.ReadAllLines(filePath1).ToList();
             string broj = lines1.ElementAt(0);
-            textBox1.Text = broj;
+            changeNumberBox.Text = broj;
         }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -41,11 +41,11 @@ namespace WindowsFormsApp1
         {
             
             List<string> lines = File.ReadAllLines(filePath).ToList();
-            if (listBox1.SelectedIndex != -1)
+            if (questionsBox.SelectedIndex != -1)
             {
-                lines.RemoveAt(listBox1.SelectedIndex);
+                lines.RemoveAt(questionsBox.SelectedIndex);
                 File.WriteAllLines(filePath, lines);
-                listBox1.Items.RemoveAt(listBox1.SelectedIndex);
+                questionsBox.Items.RemoveAt(questionsBox.SelectedIndex);
             }
         }
 
@@ -56,11 +56,11 @@ namespace WindowsFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (tb1.Text == tbt.Text || tb2.Text == tbt.Text || tb3.Text == tbt.Text || tb4.Text == tbt.Text) {
+            if (tb1.Text == correctBox.Text || tb2.Text == correctBox.Text || tb3.Text == correctBox.Text || tb4.Text == correctBox.Text) {
                 List<string> lines = File.ReadAllLines(filePath).ToList();
-                string line = Tbnaslov.Text + "," + tb1.Text + "," + tb2.Text + "," + tb3.Text + "," + tb4.Text + "," + tbt.Text;
+                string line = titleBox.Text + "," + tb1.Text + "," + tb2.Text + "," + tb3.Text + "," + tb4.Text + "," + correctBox.Text;
                 lines.Add(line);
-                listBox1.Items.Add(line);
+                questionsBox.Items.Add(line);
                 File.WriteAllLines(filePath, lines);
             }
             else
@@ -73,9 +73,9 @@ namespace WindowsFormsApp1
         {
             string filePath = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
             List<string> lines = new List<string> { };
-            if (Convert.ToInt32(textBox1.Text) <= listBox1.Items.Count)
+            if (Convert.ToInt32(changeNumberBox.Text) <= questionsBox.Items.Count)
             {
-                lines.Add(textBox1.Text);
+                lines.Add(changeNumberBox.Text);
                 File.WriteAllLines(filePath, lines);
             }
             else

@@ -18,7 +18,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
         private string ime;
-        private List<Prasanje> prasanja =  new List<Prasanje> { };
+        private List<Question> prasanja =  new List<Question> { };
         
         int count = 0;
         int brojnaprasanja;
@@ -50,7 +50,7 @@ namespace WindowsFormsApp1
                 odgovor.Add(parts[2]);
                 odgovor.Add(parts[3]);
                 odgovor.Add(parts[4]);
-                prasanja.Add(new Prasanje(parts[0], odgovor.ToArray(), parts[5]));
+                prasanja.Add(new Question(parts[0], odgovor.ToArray(), parts[5]));
             }
             odgovori = new string[brojnaprasanja];
             randombroevi = random();
@@ -60,11 +60,11 @@ namespace WindowsFormsApp1
         }
         private void load(int i)
         {
-            lprasanje.Text = "Прашање: " + prasanja[i].Naslov;
-            radioButton1.Text = prasanja[i].Ponudi[0];
-            radioButton2.Text = prasanja[i].Ponudi[1];
-            radioButton3.Text = prasanja[i].Ponudi[2];
-            radioButton4.Text = prasanja[i].Ponudi[3];
+            lprasanje.Text = "Прашање: " + prasanja[i].Title;
+            radioButton1.Text = prasanja[i].Offers[0];
+            radioButton2.Text = prasanja[i].Offers[1];
+            radioButton3.Text = prasanja[i].Offers[2];
+            radioButton4.Text = prasanja[i].Offers[3];
            
 
         }
@@ -120,7 +120,7 @@ namespace WindowsFormsApp1
                 for (int i = 0; i < randombroevi.Length; i++)
                 {
                     
-                    if (odgovori[i] == prasanja[randombroevi[i]].Tocen)
+                    if (odgovori[i] == prasanja[randombroevi[i]].Correct)
                     {
                         points++;
                     }

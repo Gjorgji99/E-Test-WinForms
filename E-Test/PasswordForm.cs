@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp1
 {
-    public partial class pass : Form
+    public partial class PasswordForm : Form
     {
-        public pass()
+        public PasswordForm()
         {
             InitializeComponent();
         }

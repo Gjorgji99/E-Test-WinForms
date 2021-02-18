@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Etest
 {
-    partial class pass
+    partial class PasswordForm
     {
         /// <summary>
         /// Required designer variable.
