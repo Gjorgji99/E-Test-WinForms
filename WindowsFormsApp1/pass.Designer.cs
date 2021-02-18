@@ -1,6 +1,6 @@
-﻿namespace Etest
+﻿namespace WindowsFormsApp1
 {
-    partial class passwordForm
+    partial class pass
     {
         /// <summary>
         /// Required designer variable.
@@ -49,7 +49,6 @@
             this.textBox1.PasswordChar = '*';
             this.textBox1.Size = new System.Drawing.Size(100, 22);
             this.textBox1.TabIndex = 1;
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // button1
             // 
@@ -71,7 +70,6 @@
             this.Controls.Add(this.label1);
             this.Name = "pass";
             this.Text = "pass";
-            this.Load += new System.EventHandler(this.pass_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -1,5 +1,4 @@
-﻿using Etest;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,63 +9,62 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Etest
+namespace WindowsFormsApp1
 {
-    public partial class QuestionsForm : Form
+    public partial class Testform : Form
     {
-        public QuestionsForm()
+        public Testform()
         {
             InitializeComponent();
         }
-
-        private string nameStudent;
-        private List<Question> questions =  new List<Question> { };
+        private string ime;
+        private List<Prasanje> prasanja =  new List<Prasanje> { };
         
         int count = 0;
-        int numberOfQuestions;
-        int[] randomNumbers;
-        string[] offers;
+        int brojnaprasanja;
+        int[] randombroevi;
+        string[] odgovori;
 
-        public void setNumberOfQuestions(int n){
-            numberOfQuestions = n;
+        public void Brojnaprasanja(int n){
+            brojnaprasanja = n;
         }
-        public void setNameStudent(string nameStudent)
+        public void setIme(string ime)
         {
-            this.nameStudent = nameStudent;
+            this.ime = ime;
         }
 
         protected void testform_Load(object sender, EventArgs e)
         {
-            lname.Text += nameStudent;
+            lname.Text += ime;
             string filePath = (Environment.CurrentDirectory + "\\Prasanja12.txt");
             string[] lines = File.ReadAllLines(filePath);
             string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
             string[] lines1 = File.ReadAllLines(filePath1);
-            numberOfQuestions = Convert.ToInt32(lines1[0]);
+            brojnaprasanja = Convert.ToInt32(lines1[0]);
             
             for (int i = 0; i < lines.Length; i++)
             {
                 string[] parts = lines[i].Split(',');
-                List<string> offers = new List<string> {};
-                offers.Add(parts[1]);
-                offers.Add(parts[2]);
-                offers.Add(parts[3]);
-                offers.Add(parts[4]);
-                questions.Add(new Question(parts[0], offers.ToArray(), parts[5]));
+                List<string> odgovor = new List<string> {};
+                odgovor.Add(parts[1]);
+                odgovor.Add(parts[2]);
+                odgovor.Add(parts[3]);
+                odgovor.Add(parts[4]);
+                prasanja.Add(new Prasanje(parts[0], odgovor.ToArray(), parts[5]));
             }
-            offers = new string[numberOfQuestions];
-            randomNumbers = random();
-            load(randomNumbers[count]);
+            odgovori = new string[brojnaprasanja];
+            randombroevi = random();
+            load(randombroevi[count]);
             count++;
 
         }
         private void load(int i)
         {
-            lprasanje.Text = "Прашање: " + questions[i].Title;
-            radioButton1.Text = questions[i].Offers[0];
-            radioButton2.Text = questions[i].Offers[1];
-            radioButton3.Text = questions[i].Offers[2];
-            radioButton4.Text = questions[i].Offers[3];
+            lprasanje.Text = "Прашање: " + prasanja[i].Naslov;
+            radioButton1.Text = prasanja[i].Ponudi[0];
+            radioButton2.Text = prasanja[i].Ponudi[1];
+            radioButton3.Text = prasanja[i].Ponudi[2];
+            radioButton4.Text = prasanja[i].Ponudi[3];
            
 
         }
@@ -93,10 +91,10 @@ namespace Etest
         {
             List<int> a = new List<int> { };
             Random r = new Random();
-            for (int i = 0; i < numberOfQuestions; i++)
+            for (int i = 0; i < brojnaprasanja; i++)
             {
                 int n;
-                do n = r.Next(0, questions.Count);
+                do n = r.Next(0,prasanja.Count);
                 while (a.Contains(n));
                 a.Add(n);
             }
@@ -104,10 +102,10 @@ namespace Etest
         }
         private void button1_Click(object sender, EventArgs e)
         {
-
-            offers[--count] = Radiocheck1();
+            
+            odgovori[--count] = Radiocheck1();
             count++;
-            if (count == numberOfQuestions - 1)
+            if (count == brojnaprasanja - 1)
             {
                 button1.Text = "Заврши";
             }
@@ -115,26 +113,26 @@ namespace Etest
             {
                 button2.Enabled = true;
             }
-            if (count == numberOfQuestions)
+            if (count == brojnaprasanja)
             {
                 
                 int points = 0;
-                for (int i = 0; i < randomNumbers.Length; i++)
+                for (int i = 0; i < randombroevi.Length; i++)
                 {
                     
-                    if (offers[i] == questions[randomNumbers[i]].Correct)
+                    if (odgovori[i] == prasanja[randombroevi[i]].Tocen)
                     {
                         points++;
                     }
                 }
                 this.Hide();
-                MessageBox.Show("Точни прашања: " + points + "/" + randomNumbers.Length);
+                MessageBox.Show("Точни прашања: " + points + "/" + randombroevi.Length);
             }
             else
             {
                 
                 
-                load(randomNumbers[count]);
+                load(randombroevi[count]);
                 count++;
             }
 
@@ -143,8 +141,8 @@ namespace Etest
         private void button2_Click(object sender, EventArgs e)
         {
             count-=2;
-            load(randomNumbers[count]);
-            if(count < numberOfQuestions)
+            load(randombroevi[count]);
+            if(count < brojnaprasanja)
             {
                 button1.Text = "Следно";
             }

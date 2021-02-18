@@ -1,6 +1,6 @@
-﻿namespace Etest
+﻿namespace WindowsFormsApp1
 {
-    partial class QuestionsForm
+    partial class Testform
     {
         /// <summary>
         /// Required designer variable.

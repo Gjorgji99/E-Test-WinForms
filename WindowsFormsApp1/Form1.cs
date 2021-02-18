@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Etest
+namespace WindowsFormsApp1
 {
-    public partial class Etest : Form
+    public partial class Form1 : Form
     {
-        public Etest()
+        public Form1()
         {
             InitializeComponent();
         }
@@ -24,21 +24,16 @@ namespace Etest
 
         private void button1_Click(object sender, EventArgs e)
         {
-            QuestionsForm test = new QuestionsForm();
-            test.setNameStudent(nameStudentBox.Text);
+            Testform test = new Testform();
+            test.setIme(Tbime.Text);
             this.Hide();
             test.ShowDialog();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            passwordForm o = new passwordForm();
+            pass o = new pass();
             o.ShowDialog();
-        }
-
-        private void Tbime_TextChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }

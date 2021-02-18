@@ -1,6 +1,6 @@
-﻿namespace Etest
+﻿namespace WindowsFormsApp1
 {
-    partial class Etest
+    partial class Form1
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.nameStudentBox = new System.Windows.Forms.TextBox();
+            this.Tbime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -44,13 +44,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // nameStudentBox
+            // Tbime
             // 
-            this.nameStudentBox.Location = new System.Drawing.Point(304, 155);
-            this.nameStudentBox.Name = "nameStudentBox";
-            this.nameStudentBox.Size = new System.Drawing.Size(156, 22);
-            this.nameStudentBox.TabIndex = 1;
-            this.nameStudentBox.TextChanged += new System.EventHandler(this.Tbime_TextChanged);
+            this.Tbime.Location = new System.Drawing.Point(304, 155);
+            this.Tbime.Name = "Tbime";
+            this.Tbime.Size = new System.Drawing.Size(156, 22);
+            this.Tbime.TabIndex = 1;
             // 
             // label1
             // 
@@ -71,16 +70,16 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // Etest
+            // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(816, 441);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.nameStudentBox);
+            this.Controls.Add(this.Tbime);
             this.Controls.Add(this.button1);
-            this.Name = "Etest";
+            this.Name = "Form1";
             this.Text = "E-Test";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
@@ -91,7 +90,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox nameStudentBox;
+        private System.Windows.Forms.TextBox Tbime;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
     }
