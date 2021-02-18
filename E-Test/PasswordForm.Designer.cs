@@ -28,48 +28,37 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(PasswordForm));
+            this.textLabel = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.entry = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // textLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(78, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(142, 17);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Внеси го пасвордот.";
+            resources.ApplyResources(this.textLabel, "textLabel");
+            this.textLabel.Name = "textLabel";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(94, 95);
+            resources.ApplyResources(this.textBox1, "textBox1");
             this.textBox1.Name = "textBox1";
-            this.textBox1.PasswordChar = '*';
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 1;
             // 
-            // button1
+            // entry
             // 
-            this.button1.Location = new System.Drawing.Point(105, 145);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Влез";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.entry, "entry");
+            this.entry.Name = "entry";
+            this.entry.UseVisualStyleBackColor = true;
+            this.entry.Click += new System.EventHandler(this.entry_Click);
             // 
-            // pass
+            // PasswordForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(319, 250);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.entry);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
-            this.Name = "pass";
-            this.Text = "pass";
+            this.Controls.Add(this.textLabel);
+            this.Name = "PasswordForm";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -77,8 +66,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label textLabel;
         private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button entry;
     }
 }

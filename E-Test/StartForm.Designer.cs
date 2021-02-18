@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Etest
 {
     partial class StartForm
     {
@@ -28,60 +28,65 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StartForm));
+            this.startButton = new System.Windows.Forms.Button();
             this.Tbime = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.profesorMenu = new System.Windows.Forms.Button();
+            this.macedonian = new System.Windows.Forms.Button();
+            this.english = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // startButton
             // 
-            this.button1.Location = new System.Drawing.Point(485, 262);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(174, 74);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Започни";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.startButton, "startButton");
+            this.startButton.Name = "startButton";
+            this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click);
             // 
             // Tbime
             // 
-            this.Tbime.Location = new System.Drawing.Point(304, 155);
+            resources.ApplyResources(this.Tbime, "Tbime");
             this.Tbime.Name = "Tbime";
-            this.Tbime.Size = new System.Drawing.Size(156, 22);
-            this.Tbime.TabIndex = 1;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(331, 116);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(109, 17);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Име и Презиме";
             // 
-            // button2
+            // profesorMenu
             // 
-            this.button2.Location = new System.Drawing.Point(134, 262);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(174, 74);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Професорско Мени";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.profesorMenu, "profesorMenu");
+            this.profesorMenu.Name = "profesorMenu";
+            this.profesorMenu.UseVisualStyleBackColor = true;
+            this.profesorMenu.Click += new System.EventHandler(this.profesorMenu_Click);
             // 
-            // Form1
+            // macedonian
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this.macedonian, "macedonian");
+            this.macedonian.Name = "macedonian";
+            this.macedonian.UseVisualStyleBackColor = true;
+            this.macedonian.Click += new System.EventHandler(this.macedonian_Click);
+            // 
+            // english
+            // 
+            resources.ApplyResources(this.english, "english");
+            this.english.Name = "english";
+            this.english.UseVisualStyleBackColor = true;
+            this.english.Click += new System.EventHandler(this.english_Click);
+            // 
+            // StartForm
+            // 
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 441);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.english);
+            this.Controls.Add(this.macedonian);
+            this.Controls.Add(this.profesorMenu);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Tbime);
-            this.Controls.Add(this.button1);
-            this.Name = "Form1";
-            this.Text = "E-Test";
-            this.Load += new System.EventHandler(this.Form1_Load);
+            this.Controls.Add(this.startButton);
+            this.Name = "StartForm";
+            this.Load += new System.EventHandler(this.StartForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -89,10 +94,12 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startButton;
         private System.Windows.Forms.TextBox Tbime;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button profesorMenu;
+        private System.Windows.Forms.Button macedonian;
+        private System.Windows.Forms.Button english;
     }
 }
 

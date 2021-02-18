@@ -73,6 +73,30 @@
     <Compile Include="QuestionsForm.Designer.cs">
       <DependentUpon>QuestionsForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PasswordForm.en.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PasswordForm.mk-MK.resx">
+      <DependentUpon>PasswordForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfesorMenu.en.resx">
+      <DependentUpon>ProfesorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ProfesorMenu.mk-MK.resx">
+      <DependentUpon>ProfesorMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionsForm.en.resx">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuestionsForm.mk-MK.resx">
+      <DependentUpon>QuestionsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.en.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StartForm.mk-MK.resx">
+      <DependentUpon>StartForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="StartForm.resx">
       <DependentUpon>StartForm.cs</DependentUpon>
     </EmbeddedResource>

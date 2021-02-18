@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Etest
 {
     public partial class PasswordForm : Form
     {
@@ -17,7 +17,7 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void entry_Click(object sender, EventArgs e)
         {
             if (textBox1.Text == "Profesor")
             {

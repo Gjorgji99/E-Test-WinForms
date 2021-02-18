@@ -9,11 +9,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace WindowsFormsApp1
+namespace Etest
 {
-    public partial class Testform : Form
+    public partial class QuestionsForm : Form
     {
-        public Testform()
+        public QuestionsForm()
         {
             InitializeComponent();
         }
@@ -33,31 +33,7 @@ namespace WindowsFormsApp1
             this.ime = ime;
         }
 
-        protected void testform_Load(object sender, EventArgs e)
-        {
-            lname.Text += ime;
-            string filePath = (Environment.CurrentDirectory + "\\Prasanja12.txt");
-            string[] lines = File.ReadAllLines(filePath);
-            string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
-            string[] lines1 = File.ReadAllLines(filePath1);
-            brojnaprasanja = Convert.ToInt32(lines1[0]);
-            
-            for (int i = 0; i < lines.Length; i++)
-            {
-                string[] parts = lines[i].Split(',');
-                List<string> odgovor = new List<string> {};
-                odgovor.Add(parts[1]);
-                odgovor.Add(parts[2]);
-                odgovor.Add(parts[3]);
-                odgovor.Add(parts[4]);
-                prasanja.Add(new Question(parts[0], odgovor.ToArray(), parts[5]));
-            }
-            odgovori = new string[brojnaprasanja];
-            randombroevi = random();
-            load(randombroevi[count]);
-            count++;
 
-        }
         private void load(int i)
         {
             lprasanje.Text = "Прашање: " + prasanja[i].Title;
@@ -65,15 +41,13 @@ namespace WindowsFormsApp1
             radioButton2.Text = prasanja[i].Offers[1];
             radioButton3.Text = prasanja[i].Offers[2];
             radioButton4.Text = prasanja[i].Offers[3];
-           
+
 
         }
-
-       
         private string Radiocheck1()
         {
             
-                if (radioButton1.Checked)
+           if (radioButton1.Checked)
             {
                 return radioButton1.Text;
             }
@@ -100,26 +74,31 @@ namespace WindowsFormsApp1
             }
             return a.ToArray();
         }
-        private void button1_Click(object sender, EventArgs e)
+        
+
+
+
+        private void nextButton_Click(object sender, EventArgs e)
         {
-            
+
+
             odgovori[--count] = Radiocheck1();
             count++;
             if (count == brojnaprasanja - 1)
             {
-                button1.Text = "Заврши";
+                nextButton.Text = "Заврши";
             }
             if (count > 0)
             {
-                button2.Enabled = true;
+                backButton.Enabled = true;
             }
             if (count == brojnaprasanja)
             {
-                
+
                 int points = 0;
                 for (int i = 0; i < randombroevi.Length; i++)
                 {
-                    
+
                     if (odgovori[i] == prasanja[randombroevi[i]].Correct)
                     {
                         points++;
@@ -130,29 +109,52 @@ namespace WindowsFormsApp1
             }
             else
             {
-                
-                
+
+
                 load(randombroevi[count]);
                 count++;
             }
-
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void backButton_Click(object sender, EventArgs e)
         {
-            count-=2;
+            count -= 2;
             load(randombroevi[count]);
-            if(count < brojnaprasanja)
+            if (count < brojnaprasanja)
             {
-                button1.Text = "Следно";
+                nextButton.Text = "Следно";
             }
-            if(count == 0)
+            if (count == 0)
             {
-                button2.Enabled = false;
+                backButton.Enabled = false;
             }
             count++;
         }
 
-     
+        private void QuestionsForm_Load(object sender, EventArgs e)
+        {
+            backButton.Enabled = false;
+            lname.Text += ime;
+            string filePath = (Environment.CurrentDirectory + "\\Prasanja12.txt");
+            string[] lines = File.ReadAllLines(filePath);
+            string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
+            string[] lines1 = File.ReadAllLines(filePath1);
+            brojnaprasanja = Convert.ToInt32(lines1[0]);
+
+            for (int i = 0; i < lines.Length; i++)
+            {
+                string[] parts = lines[i].Split(',');
+                List<string> offers = new List<string> { };
+                offers.Add(parts[1]);
+                offers.Add(parts[2]);
+                offers.Add(parts[3]);
+                offers.Add(parts[4]);
+                prasanja.Add(new Question(parts[0], offers.ToArray(), parts[5]));
+            }
+            odgovori = new string[brojnaprasanja];
+            randombroevi = random();
+            load(randombroevi[count]);
+            count++;
+        }
     }
 }

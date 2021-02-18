@@ -1,6 +1,6 @@
-﻿namespace WindowsFormsApp1
+﻿namespace Etest
 {
-    partial class Testform
+    partial class QuestionsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,111 +28,83 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(QuestionsForm));
             this.lname = new System.Windows.Forms.Label();
             this.lprasanje = new System.Windows.Forms.Label();
             this.radioButton1 = new System.Windows.Forms.RadioButton();
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
             this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.nextButton = new System.Windows.Forms.Button();
+            this.backButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lname
             // 
-            this.lname.AutoSize = true;
-            this.lname.Location = new System.Drawing.Point(37, 26);
+            resources.ApplyResources(this.lname, "lname");
             this.lname.Name = "lname";
-            this.lname.Size = new System.Drawing.Size(107, 17);
-            this.lname.TabIndex = 0;
-            this.lname.Text = "Име и презиме";
             // 
             // lprasanje
             // 
-            this.lprasanje.AutoSize = true;
-            this.lprasanje.Location = new System.Drawing.Point(123, 113);
+            resources.ApplyResources(this.lprasanje, "lprasanje");
             this.lprasanje.Name = "lprasanje";
-            this.lprasanje.Size = new System.Drawing.Size(72, 17);
-            this.lprasanje.TabIndex = 1;
-            this.lprasanje.Text = "Prasanje: ";
             // 
             // radioButton1
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(126, 197);
+            resources.ApplyResources(this.radioButton1, "radioButton1");
             this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(17, 16);
-            this.radioButton1.TabIndex = 2;
             this.radioButton1.TabStop = true;
             this.radioButton1.UseVisualStyleBackColor = true;
             // 
             // radioButton2
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(126, 282);
+            resources.ApplyResources(this.radioButton2, "radioButton2");
             this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(17, 16);
-            this.radioButton2.TabIndex = 3;
             this.radioButton2.TabStop = true;
             this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // radioButton3
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(357, 197);
+            resources.ApplyResources(this.radioButton3, "radioButton3");
             this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(17, 16);
-            this.radioButton3.TabIndex = 4;
             this.radioButton3.TabStop = true;
             this.radioButton3.UseVisualStyleBackColor = true;
             // 
             // radioButton4
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Location = new System.Drawing.Point(357, 282);
+            resources.ApplyResources(this.radioButton4, "radioButton4");
             this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(17, 16);
-            this.radioButton4.TabIndex = 5;
             this.radioButton4.TabStop = true;
             this.radioButton4.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // nextButton
             // 
-            this.button1.Location = new System.Drawing.Point(466, 380);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(107, 43);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Следно";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            resources.ApplyResources(this.nextButton, "nextButton");
+            this.nextButton.Name = "nextButton";
+            this.nextButton.UseVisualStyleBackColor = true;
+            this.nextButton.Click += new System.EventHandler(this.nextButton_Click);
             // 
-            // button2
+            // backButton
             // 
-            this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(145, 380);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(103, 43);
-            this.button2.TabIndex = 7;
-            this.button2.Text = "Предходно";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            resources.ApplyResources(this.backButton, "backButton");
+            this.backButton.Name = "backButton";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
-            // Testform
+            // QuestionsForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.backButton);
+            this.Controls.Add(this.nextButton);
             this.Controls.Add(this.radioButton4);
             this.Controls.Add(this.radioButton3);
             this.Controls.Add(this.radioButton2);
             this.Controls.Add(this.radioButton1);
             this.Controls.Add(this.lprasanje);
             this.Controls.Add(this.lname);
-            this.Name = "Testform";
-            this.Text = "E-Test";
-            this.Load += new System.EventHandler(this.testform_Load);
+            this.Name = "QuestionsForm";
+            this.Load += new System.EventHandler(this.QuestionsForm_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -146,7 +118,7 @@
         private System.Windows.Forms.RadioButton radioButton2;
         private System.Windows.Forms.RadioButton radioButton3;
         private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button nextButton;
+        private System.Windows.Forms.Button backButton;
     }
 }
