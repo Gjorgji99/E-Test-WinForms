@@ -1,6 +1,6 @@
 ﻿namespace Etest
 {
-    partial class ProfesorskoMeni
+    partial class ProfesorMenu
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfesorskoMeni));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProfesorMenu));
             this.questionsBox = new System.Windows.Forms.ListBox();
             this.addQuestion = new System.Windows.Forms.Button();
             this.tb2 = new System.Windows.Forms.TextBox();

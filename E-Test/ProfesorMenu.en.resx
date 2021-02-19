@@ -181,4 +181,10 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Profesor Menu</value>
   </data>
+  <data name="correctAnswer" xml:space="preserve">
+    <value>The correct answer is not entered</value>
+  </data>
+  <data name="limitNumberQuestions" xml:space="preserve">
+    <value>А larger number of questions is entered</value>
+  </data>
 </root>

@@ -42,12 +42,16 @@ namespace Etest
         {
             SetCulture("mk-MK");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("mk-MK");
+            macedonian.Enabled = false;
+            english.Enabled = true;
         }
 
         private void english_Click(object sender, EventArgs e)
         {
             SetCulture("en");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            english.Enabled = false;
+            macedonian.Enabled = true;
         }
 
         private void startButton_Click(object sender, EventArgs e)
@@ -66,7 +70,10 @@ namespace Etest
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-
+            SetCulture("en");
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+            english.Enabled = false;
+            macedonian.Enabled = true;
         }
     }
 }

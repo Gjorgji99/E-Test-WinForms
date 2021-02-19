@@ -5,15 +5,16 @@ using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace Etest
 {
-    public partial class ProfesorskoMeni : Form
+    public partial class ProfesorMenu : Form
     {
-        public ProfesorskoMeni()
+        public ProfesorMenu()
         {
             InitializeComponent();
         }
@@ -58,7 +59,8 @@ namespace Etest
             }
             else
             {
-                MessageBox.Show("Не е внесен точно точниот одговор");
+                ResourceManager rm = new ResourceManager(typeof(ProfesorMenu));
+                MessageBox.Show(rm.GetString("correctAnswer"));
             }
         }
 
@@ -72,7 +74,11 @@ namespace Etest
                 File.WriteAllLines(filePath, lines);
             }
             else
-                MessageBox.Show("Внесовте поголем број на прашања");
+            {
+                ResourceManager rm = new ResourceManager(typeof(ProfesorMenu));
+                MessageBox.Show(rm.GetString("limitNumberQuestions"));
+
+            }
         }
 
         private void deleteQuestion_Click(object sender, EventArgs e)
