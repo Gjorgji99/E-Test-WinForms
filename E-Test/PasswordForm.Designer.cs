@@ -1,4 +1,4 @@
-﻿namespace Etest
+﻿namespace ETestUI
 {
     partial class PasswordForm
     {

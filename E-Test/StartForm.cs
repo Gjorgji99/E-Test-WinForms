@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SQLite;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -10,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Etest
+namespace ETestUI
 {
     public partial class StartForm : Form
     {
@@ -57,7 +58,7 @@ namespace Etest
         private void startButton_Click(object sender, EventArgs e)
         {
             QuestionsForm test = new QuestionsForm();
-            test.setIme(Tbime.Text);
+            test.StudentName = Tbime.Text;
             this.Hide();
             test.ShowDialog();
         }
@@ -70,6 +71,8 @@ namespace Etest
 
         private void StartForm_Load(object sender, EventArgs e)
         {
+            SQLiteConnection conn = new SQLiteConnection(@"data source = dbEtest.db");
+            conn.Open();
             SetCulture("en");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             english.Enabled = false;
