@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
+    <value>21, 440</value>
+  </data>
   <data name="label3.Size" type="System.Drawing.Size, System.Drawing">
     <value>136, 17</value>
   </data>
@@ -132,7 +135,7 @@
     <value>label6</value>
   </data>
   <data name="&gt;&gt;questionsBox.ZOrder" xml:space="preserve">
-    <value>17</value>
+    <value>18</value>
   </data>
   <data name="&gt;&gt;titleBox.Parent" xml:space="preserve">
     <value>$this</value>
@@ -143,8 +146,8 @@
   <data name="correctBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 22</value>
   </data>
-  <data name="addQuestioн.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;label5.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;tb1.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -152,14 +155,14 @@
   <data name="label4.TabIndex" type="System.Int32, mscorlib">
     <value>11</value>
   </data>
+  <data name="changePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
   <data name="&gt;&gt;label4.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="label5.TabIndex" type="System.Int32, mscorlib">
     <value>12</value>
-  </data>
-  <data name="addQuestioн.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 454</value>
   </data>
   <data name="label6.Text" xml:space="preserve">
     <value>Точен Одговор</value>
@@ -168,10 +171,7 @@
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;changeNumber.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;addQuestioн.Name" xml:space="preserve">
-    <value>addQuestioн</value>
+    <value>2</value>
   </data>
   <data name="&gt;&gt;label6.Parent" xml:space="preserve">
     <value>$this</value>
@@ -179,23 +179,26 @@
   <data name="&gt;&gt;label2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>$this</value>
+  </data>
+  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>136, 17</value>
+  </data>
+  <data name="addQuestion.Text" xml:space="preserve">
+    <value>Додади</value>
   </data>
   <data name="changeNumber.Size" type="System.Drawing.Size, System.Drawing">
     <value>86, 40</value>
   </data>
-  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
-    <value>472, 372</value>
-  </data>
-  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="titleBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>67, 335</value>
-  </data>
-  <data name="&gt;&gt;addQuestio.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Text" xml:space="preserve">
     <value>ProfesorskoMeni</value>
@@ -210,13 +213,10 @@
     <value>6</value>
   </data>
   <data name="&gt;&gt;label1.ZOrder" xml:space="preserve">
-    <value>9</value>
+    <value>10</value>
   </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
-  </data>
-  <data name="&gt;&gt;changeNumbe.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tb2.Location" type="System.Drawing.Point, System.Drawing">
     <value>166, 403</value>
@@ -225,7 +225,7 @@
     <value>10</value>
   </data>
   <data name="&gt;&gt;correctBox.ZOrder" xml:space="preserve">
-    <value>12</value>
+    <value>13</value>
   </data>
   <data name="label7.TabIndex" type="System.Int32, mscorlib">
     <value>17</value>
@@ -233,8 +233,8 @@
   <data name="&gt;&gt;addQuestion.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="&gt;&gt;addQuestioн.ZOrder" xml:space="preserve">
-    <value>16</value>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>8, 16</value>
   </data>
   <data name="&gt;&gt;correctBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -247,9 +247,6 @@
   </data>
   <data name="label3.Text" xml:space="preserve">
     <value>Понуден Одговор 2</value>
-  </data>
-  <data name="&gt;&gt;addQuestio.ZOrder" xml:space="preserve">
-    <value>16</value>
   </data>
   <data name="label5.Text" xml:space="preserve">
     <value>Понуден Одговор 4</value>
@@ -264,25 +261,28 @@
     <value>True</value>
   </data>
   <data name="&gt;&gt;deleteQuestion.ZOrder" xml:space="preserve">
-    <value>3</value>
+    <value>4</value>
   </data>
   <data name="&gt;&gt;label5.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;label2.ZOrder" xml:space="preserve">
-    <value>8</value>
+    <value>9</value>
   </data>
   <data name="&gt;&gt;tb4.Name" xml:space="preserve">
     <value>tb4</value>
   </data>
-  <data name="&gt;&gt;changeNumbe.Name" xml:space="preserve">
-    <value>changeNumbe</value>
+  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="label7.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
   </data>
   <data name="&gt;&gt;changeNumber.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="addQuestion.Text" xml:space="preserve">
-    <value>Додади</value>
+  <data name="&gt;&gt;titleBox.ZOrder" xml:space="preserve">
+    <value>15</value>
   </data>
   <data name="&gt;&gt;label5.Name" xml:space="preserve">
     <value>label5</value>
@@ -290,11 +290,17 @@
   <data name="label7.Size" type="System.Drawing.Size, System.Drawing">
     <value>123, 17</value>
   </data>
+  <data name="label4.Text" xml:space="preserve">
+    <value>Понуден Одговор 3</value>
+  </data>
   <data name="titleBox.TabIndex" type="System.Int32, mscorlib">
     <value>3</value>
   </data>
   <data name="label4.Location" type="System.Drawing.Point, System.Drawing">
     <value>306, 372</value>
+  </data>
+  <data name="&gt;&gt;changePassword.Name" xml:space="preserve">
+    <value>changePassword</value>
   </data>
   <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
     <value>199, 294</value>
@@ -302,44 +308,38 @@
   <data name="&gt;&gt;tb3.Name" xml:space="preserve">
     <value>tb3</value>
   </data>
-  <data name="&gt;&gt;addQuestio.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
   <data name="addQuestion.TabIndex" type="System.Int32, mscorlib">
     <value>1</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>ProfesorskoMeni</value>
+    <value>ProfesorMenu</value>
   </data>
-  <data name="&gt;&gt;changeNumberBox.Name" xml:space="preserve">
-    <value>changeNumberBox</value>
+  <data name="&gt;&gt;questionsBox.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="tb2.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
-  <data name="changeNumbe.Location" type="System.Drawing.Point, System.Drawing">
-    <value>505, 199</value>
+  <data name="&gt;&gt;changePassword.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label4.ZOrder" xml:space="preserve">
-    <value>6</value>
+    <value>7</value>
   </data>
   <data name="&gt;&gt;label7.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;tb1.ZOrder" xml:space="preserve">
-    <value>13</value>
   </data>
   <data name="&gt;&gt;tb2.Name" xml:space="preserve">
     <value>tb2</value>
   </data>
   <data name="&gt;&gt;tb4.ZOrder" xml:space="preserve">
-    <value>11</value>
+    <value>12</value>
   </data>
-  <data name="label2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>136, 17</value>
+  <data name="changeNumberBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>502, 161</value>
   </data>
-  <data name="&gt;&gt;label7.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="label5.Location" type="System.Drawing.Point, System.Drawing">
+    <value>472, 372</value>
   </data>
   <data name="&gt;&gt;deleteQuestion.Parent" xml:space="preserve">
     <value>$this</value>
@@ -347,25 +347,13 @@
   <data name="deleteQuestion.Text" xml:space="preserve">
     <value>Избриши прашање</value>
   </data>
-  <data name="addQuestio.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;label2.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="tb4.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 22</value>
   </data>
-  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;changeNumbe.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
   <data name="&gt;&gt;tb3.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;changeNumbe.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;tb1.Name" xml:space="preserve">
@@ -375,7 +363,7 @@
     <value>127, 59</value>
   </data>
   <data name="&gt;&gt;tb3.ZOrder" xml:space="preserve">
-    <value>10</value>
+    <value>11</value>
   </data>
   <data name="&gt;&gt;titleBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -416,11 +404,8 @@
   <data name="label1.TabIndex" type="System.Int32, mscorlib">
     <value>8</value>
   </data>
-  <data name="changeNumberBox.Location" type="System.Drawing.Point, System.Drawing">
-    <value>502, 161</value>
-  </data>
   <data name="&gt;&gt;tb2.ZOrder" xml:space="preserve">
-    <value>15</value>
+    <value>16</value>
   </data>
   <data name="label3.Location" type="System.Drawing.Point, System.Drawing">
     <value>153, 372</value>
@@ -431,8 +416,11 @@
   <data name="label6.TabIndex" type="System.Int32, mscorlib">
     <value>13</value>
   </data>
+  <data name="changePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>156, 38</value>
+  </data>
   <data name="&gt;&gt;addQuestion.ZOrder" xml:space="preserve">
-    <value>16</value>
+    <value>17</value>
   </data>
   <data name="&gt;&gt;deleteQuestion.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -452,8 +440,11 @@
   <data name="&gt;&gt;questionsBox.Name" xml:space="preserve">
     <value>questionsBox</value>
   </data>
-  <data name="&gt;&gt;label7.Parent" xml:space="preserve">
-    <value>$this</value>
+  <data name="&gt;&gt;tb1.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="changePassword.Text" xml:space="preserve">
+    <value>Смени лозинка!</value>
   </data>
   <data name="&gt;&gt;label6.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -473,20 +464,17 @@
   <data name="label2.Text" xml:space="preserve">
     <value>Понуден Одговор 1</value>
   </data>
-  <data name="changeNumbe.TabIndex" type="System.Int32, mscorlib">
-    <value>16</value>
+  <data name="&gt;&gt;changeNumberBox.Name" xml:space="preserve">
+    <value>changeNumberBox</value>
   </data>
   <data name="&gt;&gt;changeNumber.Name" xml:space="preserve">
     <value>changeNumber</value>
   </data>
-  <data name="&gt;&gt;label5.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="label7.Location" type="System.Drawing.Point, System.Drawing">
     <value>499, 130</value>
   </data>
-  <data name="&gt;&gt;titleBox.ZOrder" xml:space="preserve">
-    <value>14</value>
+  <data name="&gt;&gt;changePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tb1.Size" type="System.Drawing.Size, System.Drawing">
     <value>100, 22</value>
@@ -495,10 +483,7 @@
     <value>15</value>
   </data>
   <data name="&gt;&gt;label5.ZOrder" xml:space="preserve">
-    <value>5</value>
-  </data>
-  <data name="&gt;&gt;addQuestioн.Parent" xml:space="preserve">
-    <value>$this</value>
+    <value>6</value>
   </data>
   <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
     <value>160, 17</value>
@@ -506,23 +491,14 @@
   <data name="&gt;&gt;changeNumberBox.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>8, 16</value>
-  </data>
-  <data name="&gt;&gt;addQuestio.Name" xml:space="preserve">
-    <value>addQuestio</value>
-  </data>
   <data name="label5.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Наслов на Прашањето</value>
   </data>
-  <data name="&gt;&gt;addQuestioн.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="&gt;&gt;changeNumberBox.ZOrder" xml:space="preserve">
-    <value>2</value>
+    <value>3</value>
   </data>
   <data name="&gt;&gt;tb4.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -533,9 +509,6 @@
   <data name="&gt;&gt;label3.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="tb4.Location" type="System.Drawing.Point, System.Drawing">
-    <value>491, 403</value>
-  </data>
   <data name="addQuestion.Location" type="System.Drawing.Point, System.Drawing">
     <value>475, 454</value>
   </data>
@@ -544,9 +517,6 @@
   </data>
   <data name="&gt;&gt;correctBox.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="addQuestio.Location" type="System.Drawing.Point, System.Drawing">
-    <value>475, 454</value>
   </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>9, 372</value>
@@ -573,7 +543,7 @@
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;label6.ZOrder" xml:space="preserve">
-    <value>4</value>
+    <value>5</value>
   </data>
   <data name="tb3.Location" type="System.Drawing.Point, System.Drawing">
     <value>325, 403</value>
@@ -585,10 +555,7 @@
     <value>100, 22</value>
   </data>
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
-    <value>7</value>
-  </data>
-  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
-    <value>True</value>
+    <value>8</value>
   </data>
   <data name="&gt;&gt;tb4.Parent" xml:space="preserve">
     <value>$this</value>
@@ -608,25 +575,28 @@
   <data name="&gt;&gt;tb2.Type" xml:space="preserve">
     <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;changePassword.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="correctBox.Location" type="System.Drawing.Point, System.Drawing">
     <value>24, 472</value>
   </data>
-  <data name="&gt;&gt;questionsBox.Parent" xml:space="preserve">
+  <data name="&gt;&gt;label4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
-  <data name="label6.Location" type="System.Drawing.Point, System.Drawing">
-    <value>21, 440</value>
+  <data name="tb4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>491, 403</value>
   </data>
-  <data name="label4.AutoSize" type="System.Boolean, mscorlib">
+  <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="label4.Text" xml:space="preserve">
-    <value>Понуден Одговор 3</value>
+  <data name="changePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>485, 273</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>mk-MK</value>
+    <value>en</value>
   </metadata>
 </root>

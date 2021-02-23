@@ -20,7 +20,8 @@ namespace ETestUI
 
         private void entry_Click(object sender, EventArgs e)
         {
-            if (textBox1.Text == "Profesor")
+            
+            if (textBox1.Text == Properties.Settings.Default.Password)
             {
                 ProfesorMenu o = new ProfesorMenu();
                 o.ShowDialog();
@@ -30,7 +31,6 @@ namespace ETestUI
                 ResourceManager rm = new ResourceManager(typeof(PasswordForm));
                 MessageBox.Show(rm.GetString("passwordError"));
             }
-
         }
     }
 }

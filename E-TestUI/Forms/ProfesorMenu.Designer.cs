@@ -47,6 +47,7 @@
             this.changeNumberBox = new System.Windows.Forms.TextBox();
             this.changeNumber = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
+            this.changePassword = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // questionsBox
@@ -54,7 +55,6 @@
             resources.ApplyResources(this.questionsBox, "questionsBox");
             this.questionsBox.FormattingEnabled = true;
             this.questionsBox.Name = "questionsBox";
-            this.questionsBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
             // addQuestion
             // 
@@ -87,7 +87,6 @@
             // 
             resources.ApplyResources(this.tb4, "tb4");
             this.tb4.Name = "tb4";
-            this.tb4.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // tb3
             // 
@@ -148,10 +147,18 @@
             resources.ApplyResources(this.label7, "label7");
             this.label7.Name = "label7";
             // 
-            // ProfesorskoMeni
+            // changePassword
+            // 
+            resources.ApplyResources(this.changePassword, "changePassword");
+            this.changePassword.Name = "changePassword";
+            this.changePassword.UseVisualStyleBackColor = true;
+            this.changePassword.Click += new System.EventHandler(this.changePassword_Click);
+            // 
+            // ProfesorMenu
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.changePassword);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.changeNumber);
             this.Controls.Add(this.changeNumberBox);
@@ -170,7 +177,7 @@
             this.Controls.Add(this.tb2);
             this.Controls.Add(this.addQuestion);
             this.Controls.Add(this.questionsBox);
-            this.Name = "ProfesorskoMeni";
+            this.Name = "ProfesorMenu";
             this.Load += new System.EventHandler(this.ProfesorskoMeni_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -197,5 +204,6 @@
         private System.Windows.Forms.TextBox changeNumberBox;
         private System.Windows.Forms.Button changeNumber;
         private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button changePassword;
     }
 }

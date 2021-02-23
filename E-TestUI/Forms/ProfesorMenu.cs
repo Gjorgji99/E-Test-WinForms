@@ -1,5 +1,6 @@
 ﻿using ETestUI;
 using ETestUI.Controller;
+using ETestUI.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace ETestUI
 {
     public partial class ProfesorMenu : Form
     {
+        ResourceManager rm = new ResourceManager(typeof(ProfesorMenu));
         public ProfesorMenu()
         {
             InitializeComponent();
@@ -34,21 +36,6 @@ namespace ETestUI
             string broj = "3";
             changeNumberBox.Text = broj;
         }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-
-        private void textBox5_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
-
-
-
-
         private void addQuestion_Click(object sender, EventArgs e)
         {
             if (tb1.Text == correctBox.Text || tb2.Text == correctBox.Text || tb3.Text == correctBox.Text || tb4.Text == correctBox.Text)
@@ -59,25 +46,21 @@ namespace ETestUI
             }
             else
             {
-                ResourceManager rm = new ResourceManager(typeof(ProfesorMenu));
+               
                 MessageBox.Show(rm.GetString("correctAnswer"));
             }
         }
 
         private void changeNumber_Click(object sender, EventArgs e)
         {
-            string filePath = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
-            List<string> lines = new List<string> { };
             if (Convert.ToInt32(changeNumberBox.Text) <= questionsBox.Items.Count)
             {
-                lines.Add(changeNumberBox.Text);
-                File.WriteAllLines(filePath, lines);
+                Properties.Settings.Default.NumberOfQuestions = changeNumberBox.Text;
+                Properties.Settings.Default.Save();
             }
             else
             {
-                ResourceManager rm = new ResourceManager(typeof(ProfesorMenu));
                 MessageBox.Show(rm.GetString("limitNumberQuestions"));
-
             }
         }
 
@@ -88,6 +71,12 @@ namespace ETestUI
                 DataBaseController.deleteQuestion(questions[questionsBox.SelectedIndex]);
                 questionsBox.Items.RemoveAt(questionsBox.SelectedIndex);
             }
+        }
+
+        private void changePassword_Click(object sender, EventArgs e)
+        {
+            ChangePassword c = new ChangePassword();
+            c.ShowDialog();
         }
     }
 }

@@ -36,6 +36,8 @@ namespace ETestUI
         private void macedonian_Click(object sender, EventArgs e)
         {
             SetCulture("mk-MK");
+            Properties.Settings.Default.Language = "mk-MK";
+            Properties.Settings.Default.Save();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("mk-MK");
             macedonian.Enabled = false;
             english.Enabled = true;
@@ -44,6 +46,8 @@ namespace ETestUI
         private void english_Click(object sender, EventArgs e)
         {
             SetCulture("en");
+            Properties.Settings.Default.Language = "en";
+            Properties.Settings.Default.Save();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             english.Enabled = false;
             macedonian.Enabled = true;
@@ -64,10 +68,21 @@ namespace ETestUI
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            SetCulture("en");
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-            english.Enabled = false;
-            macedonian.Enabled = true;
+            if (Properties.Settings.Default.Language == "mk-MK")
+            {
+                english.Enabled = true;
+                macedonian.Enabled = false;
+                SetCulture("mk-MK");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("mk-MK");
+            }
+            else
+            {
+                SetCulture("en");
+                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
+                english.Enabled = false;
+                macedonian.Enabled = true;
+            }
+            
         }
     }
 }

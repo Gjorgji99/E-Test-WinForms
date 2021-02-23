@@ -77,7 +77,7 @@ namespace ETestUI
         {
             backButton.Text = rm.GetString("backButton.Text");
             backButton.Enabled = false;
-            lname.Text += StudentName;
+            lname.Text += studentName;
             test.Load();
         }
         private void backButton_Click(object sender, EventArgs e)
