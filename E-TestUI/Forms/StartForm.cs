@@ -21,18 +21,12 @@ namespace ETestUI
         }
         private void SetCulture(string culture)
         {
-            // Make the CultureInfo.
             CultureInfo culture_info = new CultureInfo(culture);
-
-            // Make a ComponentResourceManager.
             ComponentResourceManager component_resource_manager
                 = new ComponentResourceManager(this.GetType());
-
-            // Apply resources to the form.
             component_resource_manager.ApplyResources(
                 this, "$this", culture_info);
 
-            // Apply resources to the form's controls.
             foreach (Control ctl in this.Controls)
             {
                 component_resource_manager.ApplyResources(
@@ -57,8 +51,7 @@ namespace ETestUI
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            QuestionsForm test = new QuestionsForm();
-            test.StudentName = Tbime.Text;
+            QuestionsForm test = new QuestionsForm(Tbime.Text);
             this.Hide();
             test.ShowDialog();
         }

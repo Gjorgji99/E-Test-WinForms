@@ -24,7 +24,10 @@ namespace ETestUI
         private string studentName;
         Etest test = new Etest(3);
 
-        public string StudentName { get => studentName; set => studentName = value; }
+        public QuestionsForm(string studentName)
+        {
+            this.studentName = studentName;
+        }
 
         private void load(Question q)
         {
@@ -52,11 +55,6 @@ namespace ETestUI
             }
             return radioButton4.Text;
         }
-
-
-
-
-
         private void nextButton_Click(object sender, EventArgs e)
         {
             load(test.Next(Radiocheck1()));
@@ -75,9 +73,6 @@ namespace ETestUI
 
             }
         }
-
-
-
         private void QuestionsForm_Load(object sender, EventArgs e)
         {
             backButton.Text = rm.GetString("backButton.Text");
@@ -85,7 +80,6 @@ namespace ETestUI
             lname.Text += StudentName;
             test.Load();
         }
-
         private void backButton_Click(object sender, EventArgs e)
         {
             load(test.Back());
