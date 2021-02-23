@@ -1,8 +1,8 @@
-﻿using System;
+﻿using ETestUI.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Data.SQLite;
 using System.Drawing;
 using System.Globalization;
 using System.Linq;
@@ -71,8 +71,6 @@ namespace ETestUI
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            SQLiteConnection conn = new SQLiteConnection(@"data source = dbEtest.db");
-            conn.Open();
             SetCulture("en");
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
             english.Enabled = false;

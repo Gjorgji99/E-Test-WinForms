@@ -248,6 +248,9 @@
   <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="&gt;&gt;lprasanje.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;backButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -259,9 +262,6 @@
   </data>
   <data name="&gt;&gt;button2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="nextButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
   </data>
   <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -347,8 +347,8 @@
   <data name="&gt;&gt;backButton.Name" xml:space="preserve">
     <value>backButton</value>
   </data>
-  <data name="&gt;&gt;lprasanje.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="nextButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 43</value>

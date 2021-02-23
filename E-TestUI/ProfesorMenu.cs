@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ETestUI;
+using ETestUI.Controller;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +11,6 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace ETestUI
 {
     public partial class ProfesorMenu : Form
@@ -18,18 +19,19 @@ namespace ETestUI
         {
             InitializeComponent();
         }
-        string filePath;
+        List<Question> questions;
 
-        
+
 
         private void ProfesorskoMeni_Load(object sender, EventArgs e)
         {
-            filePath = Path.Combine(Environment.CurrentDirectory + "\\Prasanja12.txt");
-            string[] lines = File.ReadAllLines(filePath);
-            questionsBox.Items.AddRange(lines);
-            string filePath1 = (Environment.CurrentDirectory + "\\brojnaprasanja.txt");
-            List<string> lines1 = File.ReadAllLines(filePath1).ToList();
-            string broj = lines1.ElementAt(0);
+            questionsBox.MultiColumn = true;
+            questions = DataBaseController.loadQuestions();
+            foreach (var a in questions)
+            {
+                questionsBox.Items.Add(a.ToString());
+            }
+            string broj = "3";
             changeNumberBox.Text = broj;
         }
 
@@ -51,11 +53,9 @@ namespace ETestUI
         {
             if (tb1.Text == correctBox.Text || tb2.Text == correctBox.Text || tb3.Text == correctBox.Text || tb4.Text == correctBox.Text)
             {
-                List<string> lines = File.ReadAllLines(filePath).ToList();
-                string line = titleBox.Text + "," + tb1.Text + "," + tb2.Text + "," + tb3.Text + "," + tb4.Text + "," + correctBox.Text;
-                lines.Add(line);
-                questionsBox.Items.Add(line);
-                File.WriteAllLines(filePath, lines);
+                Question question = new Question(titleBox.Text, tb1.Text, tb2.Text, tb3.Text, tb4.Text, correctBox.Text);                
+                questionsBox.Items.Add(question.ToString());
+                DataBaseController.addQuestion(question);
             }
             else
             {
@@ -83,11 +83,9 @@ namespace ETestUI
 
         private void deleteQuestion_Click(object sender, EventArgs e)
         {
-            List<string> lines = File.ReadAllLines(filePath).ToList();
             if (questionsBox.SelectedIndex != -1)
             {
-                lines.RemoveAt(questionsBox.SelectedIndex);
-                File.WriteAllLines(filePath, lines);
+                DataBaseController.deleteQuestion(questions[questionsBox.SelectedIndex]);
                 questionsBox.Items.RemoveAt(questionsBox.SelectedIndex);
             }
         }
