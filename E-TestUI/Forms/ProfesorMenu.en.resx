@@ -184,4 +184,7 @@
   <data name="$this.Text" xml:space="preserve">
     <value>Profesor Menu</value>
   </data>
+  <data name="correctAnswer" xml:space="preserve">
+    <value>Wrong correct Offer</value>
+  </data>
 </root>

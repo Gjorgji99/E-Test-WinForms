@@ -120,15 +120,15 @@
   <data name="button2.Text" xml:space="preserve">
     <value>Предходно</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>E-Test</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
     <value>800, 450</value>
   </data>
   <data name="radioButton4.Location" type="System.Drawing.Point, System.Drawing">
     <value>357, 282</value>
-  </data>
-  <data name="lname.Location" type="System.Drawing.Point, System.Drawing">
-    <value>37, 26</value>
   </data>
   <data name="&gt;&gt;button1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -140,14 +140,11 @@
   <data name="radioButton4.TabIndex" type="System.Int32, mscorlib">
     <value>5</value>
   </data>
-  <data name="&gt;&gt;$this.Name" xml:space="preserve">
-    <value>QuestionsForm</value>
+  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;lname.Name" xml:space="preserve">
     <value>lname</value>
-  </data>
-  <data name="&gt;&gt;radioButton1.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="radioButton2.Location" type="System.Drawing.Point, System.Drawing">
     <value>126, 282</value>
@@ -215,9 +212,6 @@
   <data name="radioButton3.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>
   </data>
-  <data name="nextButton.Location" type="System.Drawing.Point, System.Drawing">
-    <value>466, 380</value>
-  </data>
   <data name="&gt;&gt;radioButton1.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
@@ -239,17 +233,17 @@
   <data name="button1.Text" xml:space="preserve">
     <value>Следно</value>
   </data>
+  <data name="lprasanje.Text" xml:space="preserve">
+    <value>Прашање: </value>
+  </data>
   <data name="&gt;&gt;nextButton.ZOrder" xml:space="preserve">
     <value>1</value>
   </data>
-  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
-    <value>17, 16</value>
+  <data name="nextButton.Location" type="System.Drawing.Point, System.Drawing">
+    <value>466, 380</value>
   </data>
   <data name="&gt;&gt;radioButton4.Parent" xml:space="preserve">
     <value>$this</value>
-  </data>
-  <data name="&gt;&gt;lprasanje.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;backButton.Parent" xml:space="preserve">
     <value>$this</value>
@@ -262,6 +256,9 @@
   </data>
   <data name="&gt;&gt;button2.Type" xml:space="preserve">
     <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="nextButton.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
   </data>
   <data name="&gt;&gt;radioButton2.Type" xml:space="preserve">
     <value>System.Windows.Forms.RadioButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -290,6 +287,9 @@
   <data name="&gt;&gt;radioButton4.Name" xml:space="preserve">
     <value>radioButton4</value>
   </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;nextButton.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
@@ -311,8 +311,8 @@
   <data name="lname.Text" xml:space="preserve">
     <value>Име и презиме:   </value>
   </data>
-  <data name="lprasanje.Text" xml:space="preserve">
-    <value>Прашање: </value>
+  <data name="radioButton2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>17, 16</value>
   </data>
   <data name="&gt;&gt;lprasanje.ZOrder" xml:space="preserve">
     <value>6</value>
@@ -338,8 +338,8 @@
   <data name="backButton.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>E-Test</value>
+  <data name="lname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>37, 26</value>
   </data>
   <data name="&gt;&gt;lprasanje.Parent" xml:space="preserve">
     <value>$this</value>
@@ -347,14 +347,14 @@
   <data name="&gt;&gt;backButton.Name" xml:space="preserve">
     <value>backButton</value>
   </data>
-  <data name="nextButton.TabIndex" type="System.Int32, mscorlib">
-    <value>6</value>
+  <data name="&gt;&gt;lprasanje.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="button2.Size" type="System.Drawing.Size, System.Drawing">
     <value>103, 43</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>QuestionsForm</value>
   </data>
   <data name="radioButton4.Size" type="System.Drawing.Size, System.Drawing">
     <value>17, 16</value>
@@ -375,6 +375,6 @@
     <value>True</value>
   </metadata>
   <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>en</value>
+    <value>mk-MK</value>
   </metadata>
 </root>

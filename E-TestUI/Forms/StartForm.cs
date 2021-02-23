@@ -26,36 +26,44 @@ namespace ETestUI
                 = new ComponentResourceManager(this.GetType());
             component_resource_manager.ApplyResources(
                 this, "$this", culture_info);
-
+            
             foreach (Control ctl in this.Controls)
             {
                 component_resource_manager.ApplyResources(
                     ctl, ctl.Name, culture_info);
             }
         }
+        void changeLanguage(string language)
+        {
+            SetCulture(language);
+            Properties.Settings.Default.Language = language;
+            Properties.Settings.Default.Save();
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
+            if(language == "en")
+            {
+                english.Enabled = false;
+                macedonian.Enabled = true;
+            }
+            else
+            {
+                macedonian.Enabled = false;
+                english.Enabled = true;
+            }
+        }
         private void macedonian_Click(object sender, EventArgs e)
         {
-            SetCulture("mk-MK");
-            Properties.Settings.Default.Language = "mk-MK";
-            Properties.Settings.Default.Save();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("mk-MK");
-            macedonian.Enabled = false;
-            english.Enabled = true;
+            changeLanguage("mk-MK");   
         }
 
         private void english_Click(object sender, EventArgs e)
         {
-            SetCulture("en");
-            Properties.Settings.Default.Language = "en";
-            Properties.Settings.Default.Save();
-            Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-            english.Enabled = false;
-            macedonian.Enabled = true;
+            changeLanguage("en");
         }
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            QuestionsForm test = new QuestionsForm(Tbime.Text);
+            QuestionsForm test = new QuestionsForm();
+            test.Name = Tbime.Text;
             this.Hide();
             test.ShowDialog();
         }
@@ -70,17 +78,11 @@ namespace ETestUI
         {
             if (Properties.Settings.Default.Language == "mk-MK")
             {
-                english.Enabled = true;
-                macedonian.Enabled = false;
-                SetCulture("mk-MK");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("mk-MK");
+                changeLanguage("mk-MK");
             }
             else
             {
-                SetCulture("en");
-                Thread.CurrentThread.CurrentUICulture = new CultureInfo("en");
-                english.Enabled = false;
-                macedonian.Enabled = true;
+                changeLanguage("en");
             }
             
         }

@@ -134,4 +134,7 @@
   <data name="backButton.Text" xml:space="preserve">
     <value>Предходно</value>
   </data>
+  <data name="finish" xml:space="preserve">
+    <value>Заврши</value>
+  </data>
 </root>

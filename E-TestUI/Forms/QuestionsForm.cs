@@ -22,12 +22,9 @@ namespace ETestUI
         ResourceManager rm = new ResourceManager(typeof(QuestionsForm));
 
         private string studentName;
-        Etest test = new Etest(3);
+        Etest test = new Etest();
 
-        public QuestionsForm(string studentName)
-        {
-            this.studentName = studentName;
-        }
+        public Etest Test { get => test; set => test = value; }
 
         private void load(Question q)
         {
@@ -57,20 +54,24 @@ namespace ETestUI
         }
         private void nextButton_Click(object sender, EventArgs e)
         {
-            load(test.Next(Radiocheck1()));
-            if (test.Count == test.NumberOfQuestions - 1)
+            
+            if (Test.Count == Test.NumberOfQuestions - 2)
             {
                 nextButton.Text = rm.GetString("finish");
             }
-            if (test.Count > 0)
+            if (Test.Count >= 0)
             {
                 backButton.Enabled = true;
             }
-            if (test.Count == test.NumberOfQuestions)
+            if (Test.Count == Test.NumberOfQuestions-1)
             {
                 this.Hide();
-                MessageBox.Show(rm.GetString("lprasanje.Text") + test.Points + "/" + test.NumberOfQuestions);
+                MessageBox.Show(rm.GetString("lprasanje.Text") + Test.Points + "/" + Test.NumberOfQuestions);
 
+            }
+            else
+            {
+                load(Test.Next(Radiocheck1()));
             }
         }
         private void QuestionsForm_Load(object sender, EventArgs e)
@@ -78,16 +79,16 @@ namespace ETestUI
             backButton.Text = rm.GetString("backButton.Text");
             backButton.Enabled = false;
             lname.Text += studentName;
-            test.Load();
+            load(Test.Load());
         }
         private void backButton_Click(object sender, EventArgs e)
         {
-            load(test.Back());
-            if (test.Count < test.NumberOfQuestions)
+            load(Test.Back());
+            if (Test.Count < Test.NumberOfQuestions)
             {
                 nextButton.Text = rm.GetString("nextButton.Text");
             }
-            if (test.Count == 0)
+            if (Test.Count == 0)
             {
                 backButton.Enabled = false;
             }

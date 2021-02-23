@@ -131,4 +131,7 @@
   <data name="changeNumbe.Text" xml:space="preserve">
     <value>Смени</value>
   </data>
+  <data name="correctAnswer" xml:space="preserve">
+    <value>Грешка е внесен точниот одговор</value>
+  </data>
 </root>

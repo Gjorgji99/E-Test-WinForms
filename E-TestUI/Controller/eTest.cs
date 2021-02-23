@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ETestUI.Controller;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -10,12 +11,17 @@ namespace ETestUI
         int count = 0;
         int numberOfQuestions;
         public int Points { get; set; } = 0;
-
-        public Etest(int numberOfQuestions)
+        public Etest()
         {
-            this.numberOfQuestions = numberOfQuestions;
+            
+            this.NumberOfQuestions = Int32.Parse(Properties.Settings.Default.NumberOfQuestions);
+            List<Question> temp = DataBaseController.loadQuestions();
+            int[] numbers = random(temp.Count);
+            for(int i = 0; i < numberOfQuestions; i++)
+            {
+                questions.Add(temp[numbers[i]]);
+            }
         }
-
         public Question Load()
         {
             return questions[Count];
@@ -38,15 +44,15 @@ namespace ETestUI
             }
             return questions[Count];
         }
-        public int NumberOfQuestions { get => NumberOfQuestions1; set => NumberOfQuestions1 = value;}
+
         public int Count { get => count; set => count = value; }
-        public int NumberOfQuestions1 { get => numberOfQuestions; set => numberOfQuestions = value; }
+        public int NumberOfQuestions { get => numberOfQuestions; set => numberOfQuestions = value; }
 
         int[] random(int number)
         {
             List<int> a = new List<int> { };
             Random r = new Random();
-            for (int i = 0; i < NumberOfQuestions1; i++)
+            for (int i = 0; i < numberOfQuestions; i++)
             {
                 int n;
                 do n = r.Next(0, number);
