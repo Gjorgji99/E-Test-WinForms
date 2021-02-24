@@ -26,13 +26,17 @@ namespace ETestUI
         {
             return questions[Count];
         }
-        public Question Next(string choose)
+        public void checkQuestion(string choose)
         {
-            if(choose == questions[Count].Correct)
+            if (choose == questions[Count].Correct)
             {
                 Points++;
                 questions[Count].Point = true;
             }
+        }
+        public Question Next(string choose)
+        {
+            checkQuestion(choose);
             return questions[++Count];
         }
         public Question Back()

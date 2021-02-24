@@ -65,9 +65,9 @@ namespace ETestUI
             }
             if (Test.Count == Test.NumberOfQuestions-1)
             {
+                test.checkQuestion(Radiocheck1());
                 this.Hide();
                 MessageBox.Show(rm.GetString("lprasanje.Text") + Test.Points + "/" + Test.NumberOfQuestions);
-
             }
             else
             {
