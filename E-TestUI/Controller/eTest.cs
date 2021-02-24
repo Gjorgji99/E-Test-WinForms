@@ -17,6 +17,7 @@ namespace ETestUI
             this.NumberOfQuestions = Int32.Parse(Properties.Settings.Default.NumberOfQuestions);
             List<Question> temp = DataBaseController.loadQuestions();
             int[] numbers = random(temp.Count);
+
             for(int i = 0; i < numberOfQuestions; i++)
             {
                 questions.Add(temp[numbers[i]]);
