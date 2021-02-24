@@ -63,7 +63,7 @@ namespace ETestUI
         private void startButton_Click(object sender, EventArgs e)
         {
             QuestionsForm test = new QuestionsForm();
-            test.Name = Tbime.Text;
+            test.StudentName = Tbime.Text;
             this.Hide();
             test.ShowDialog();
         }

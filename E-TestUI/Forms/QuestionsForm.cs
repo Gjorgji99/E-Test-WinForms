@@ -25,6 +25,7 @@ namespace ETestUI
         Etest test = new Etest();
 
         public Etest Test { get => test; set => test = value; }
+        public string StudentName { get => studentName; set => studentName = value; }
 
         private void load(Question q)
         {
@@ -78,7 +79,7 @@ namespace ETestUI
         {
             backButton.Text = rm.GetString("backButton.Text");
             backButton.Enabled = false;
-            lname.Text += studentName;
+            lname.Text += StudentName;
             load(Test.Load());
         }
         private void backButton_Click(object sender, EventArgs e)
