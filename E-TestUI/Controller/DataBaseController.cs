@@ -18,7 +18,7 @@ namespace ETestUI.Controller
         public static List<Question> loadQuestions()
         {
             string language;
-            var path = Path.Combine(Environment.CurrentDirectory, "..\\..\\dbEtest.db");
+            var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
             if (Properties.Settings.Default.Language == "mk-MK")
             {
@@ -53,7 +53,7 @@ namespace ETestUI.Controller
         }
         public static void addQuestion(Question q)
         {
-            var path = Path.Combine(Environment.CurrentDirectory, "..\\..\\dbEtest.db");
+            var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
             string language;
             if(Properties.Settings.Default.Language == "mk-MK")
@@ -80,7 +80,7 @@ namespace ETestUI.Controller
         }
         public static void deleteQuestion(Question q)
         {
-            var path = Path.Combine(Environment.CurrentDirectory, "..\\..\\dbEtest.db");
+            var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
             string language;
             if (Properties.Settings.Default.Language == "mk-MK")

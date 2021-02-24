@@ -76,15 +76,7 @@ namespace ETestUI
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-            if (Properties.Settings.Default.Language == "mk-MK")
-            {
-                changeLanguage("mk-MK");
-            }
-            else
-            {
-                changeLanguage("en");
-            }
-            
+                changeLanguage(Properties.Settings.Default.Language);
         }
     }
 }
