@@ -1,9 +1,9 @@
-﻿using ETestUI.Controller;
+﻿using EtestLibrary.Models;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
-namespace ETestUI
+namespace EtestLibrary.Services
 {
     public class Etest
     {
@@ -11,22 +11,17 @@ namespace ETestUI
         int count = 0;
         int numberOfQuestions;
         public int Points { get; set; } = 0;
-        public Etest()
+        public Etest(string numberOfQuestions,string language)
         {
-            
-            this.NumberOfQuestions = Int32.Parse(Properties.Settings.Default.NumberOfQuestions);
-            List<Question> temp = DataBaseController.loadQuestions();
+            this.NumberOfQuestions = Int32.Parse(numberOfQuestions);
+            List<Question> temp = DataBaseController.loadQuestions(language);
             int[] numbers = random(temp.Count);
-
-            for(int i = 0; i < numberOfQuestions; i++)
+            for (int i = 0; i < this.numberOfQuestions; i++)
             {
                 questions.Add(temp[numbers[i]]);
             }
         }
-        public Question Load()
-        {
-            return questions[Count];
-        }
+        public Question Load => questions[Count];
         public void checkQuestion(string choose)
         {
             if (choose == questions[Count].Correct)
@@ -66,6 +61,5 @@ namespace ETestUI
             }
             return a.ToArray();
         }
-
     }
 }

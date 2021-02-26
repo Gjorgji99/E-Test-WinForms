@@ -1,26 +1,22 @@
-﻿using System;
+﻿using EtestLibrary.Models;
+using System;
 using System.Collections.Generic;
-using System.Data.SqlClient;
 using System.Data.SQLite;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace ETestUI.Controller
+namespace EtestLibrary.Services
 {
-    class DataBaseController
+    public class DataBaseController
     {
-        private string ConectionString;
 
         public static string ConnectionString { get; private set; }
 
-        public static List<Question> loadQuestions()
+        public static List<Question> loadQuestions(string language)
         {
-            string language;
             var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
-            if (Properties.Settings.Default.Language == "mk-MK")
+            if (language == "mk-MK")
             {
                 language = "MK";
             }
@@ -34,7 +30,7 @@ namespace ETestUI.Controller
             {
                 connection.Open();
                 var command = new SQLiteCommand(stringSql, connection);
-                using(SQLiteDataReader sqlReader = command.ExecuteReader())
+                using (SQLiteDataReader sqlReader = command.ExecuteReader())
                 {
                     while (sqlReader.Read())
                     {
@@ -44,27 +40,28 @@ namespace ETestUI.Controller
                         string offer3 = (string)sqlReader["offer3"];
                         string offer4 = (string)sqlReader["offer4"];
                         string correct = (string)sqlReader["correct"];
-                        temp.Add(new Question(title,offer1,offer2,offer3,offer4,correct));
+                        temp.Add(new Question(title, offer1, offer2, offer3, offer4, correct));
 
                     }
                 }
                 return temp;
-            }        
+            }
         }
-        public static void addQuestion(Question q)
+        public static void addQuestion(Question q, string language)
         {
             var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
-            string language;
-            if(Properties.Settings.Default.Language == "mk-MK")
+            
+            if (language == "mk-MK")
             {
                 language = "MK";
-            }else
+            }
+            else
             {
                 language = "EN";
             }
-            string queryString = "INSERT INTO Questions"+language+"(title, offer1, offer2, offer3, offer4, correct)" +
-                " values(@title,@offer1,@offer2,@offer3,@offer4,@correct); " ;
+            string queryString = "INSERT INTO Questions" + language + "(title, offer1, offer2, offer3, offer4, correct)" +
+                " values(@title,@offer1,@offer2,@offer3,@offer4,@correct); ";
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();
@@ -78,12 +75,11 @@ namespace ETestUI.Controller
                 command.ExecuteScalar();
             }
         }
-        public static void deleteQuestion(Question q)
+        public static void deleteQuestion(Question q,string language)
         {
             var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
-            string language;
-            if (Properties.Settings.Default.Language == "mk-MK")
+            if (language == "mk-MK")
             {
                 language = "MK";
             }
@@ -91,7 +87,7 @@ namespace ETestUI.Controller
             {
                 language = "EN";
             }
-            string stringSql = "DELETE FROM Questions"+language+" WHERE title=@title";
+            string stringSql = "DELETE FROM Questions" + language + " WHERE title=@title";
             using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
             {
                 connection.Open();

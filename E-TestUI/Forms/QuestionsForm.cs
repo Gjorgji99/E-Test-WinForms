@@ -9,6 +9,8 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using EtestLibrary.Models;
+using EtestLibrary.Services;
 using ETestUI;
 
 namespace ETestUI
@@ -22,7 +24,7 @@ namespace ETestUI
         ResourceManager rm = new ResourceManager(typeof(QuestionsForm));
 
         private string studentName;
-        Etest test = new Etest();
+        Etest test = new Etest(Properties.Settings.Default.NumberOfQuestions,Properties.Settings.Default.Language);
 
         public Etest Test { get => test; set => test = value; }
         public string StudentName { get => studentName; set => studentName = value; }
@@ -80,7 +82,7 @@ namespace ETestUI
             backButton.Text = rm.GetString("backButton.Text");
             backButton.Enabled = false;
             lname.Text += StudentName;
-            load(Test.Load());
+            load(test.Load);
         }
         private void backButton_Click(object sender, EventArgs e)
         {

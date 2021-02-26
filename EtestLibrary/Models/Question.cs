@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace ETestUI
+namespace EtestLibrary.Models
 {
     public class Question
     {
@@ -43,3 +43,5 @@ namespace ETestUI
         }
     }
 }
+
+
