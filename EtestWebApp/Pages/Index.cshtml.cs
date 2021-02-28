@@ -13,7 +13,7 @@ namespace EtestWebApp.Pages
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public List<Question> questions = DataBaseController.loadQuestions("mk-MK");
+        public List<Question> questions = DataBaseService.loadQuestions("mk-MK");
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
