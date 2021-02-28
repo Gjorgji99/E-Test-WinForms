@@ -3,5 +3,14 @@
 @{
     ViewData["Title"] = "Home page";
 }
-
+@foreach (var question in Model.questions)
+{
+    <h2>
+        @question.Title
+        
+    </h2>
+    <p>
+        @question.Correct
+    </p>
+}
 
