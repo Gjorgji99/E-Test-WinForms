@@ -14,7 +14,7 @@ namespace EtestLibrary.Services
         public Etest(string numberOfQuestions,string language)
         {
             this.NumberOfQuestions = Int32.Parse(numberOfQuestions);
-            List<Question> temp = DataBaseController.loadQuestions(language);
+            List<Question> temp = DataBaseService.loadQuestions(language);
             int[] numbers = random(temp.Count);
             for (int i = 0; i < this.numberOfQuestions; i++)
             {

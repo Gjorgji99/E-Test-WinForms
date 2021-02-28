@@ -7,7 +7,7 @@ using System.Text;
 
 namespace EtestLibrary.Services
 {
-    public class DataBaseController
+    public class DataBaseService
     {
 
         public static string ConnectionString { get; private set; }
