@@ -5,15 +5,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using EtestLibrary;
-using EtestLibrary.Models;
-using EtestLibrary.Services;
 namespace EtestWebApp.Pages
 { 
     public class IndexModel : PageModel
     {
         private readonly ILogger<IndexModel> _logger;
-        public List<Question> questions { get; private set;}
+
         public IndexModel(ILogger<IndexModel> logger)
         {
             _logger = logger;
@@ -21,7 +18,9 @@ namespace EtestWebApp.Pages
 
         public void OnGet()
         {
-            questions = DataBaseService.loadQuestions("mk-MK");
+        }
+        public void OnPost(){
+            string name = Request.Form["name"];
         }
     }
 }
