@@ -1,7 +1,7 @@
 ﻿using EtestLibrary.Models;
 using EtestLibrary.Services;
-using ETestUI;
-using ETestUI.Forms;
+using ETestForms;
+using ETestForms.Forms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,7 +13,7 @@ using System.Resources;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-namespace ETestUI
+namespace ETestForms
 {
     public partial class ProfesorMenu : Form
     {
@@ -29,7 +29,7 @@ namespace ETestUI
         private void ProfesorskoMeni_Load(object sender, EventArgs e)
         {
             questionsBox.MultiColumn = true;
-            questions = DataBaseController.loadQuestions(Properties.Settings.Default.Language);
+            questions = DataBaseService.loadQuestions(Properties.Settings.Default.Language);
             foreach (var a in questions)
             {
                 questionsBox.Items.Add(a.ToString());
@@ -43,7 +43,7 @@ namespace ETestUI
             {
                 Question question = new Question(titleBox.Text, tb1.Text, tb2.Text, tb3.Text, tb4.Text, correctBox.Text);                
                 questionsBox.Items.Add(question.ToString());
-                DataBaseController.addQuestion(question, Properties.Settings.Default.Language);
+                DataBaseService.addQuestion(question, Properties.Settings.Default.Language);
             }
             else
             {
@@ -69,7 +69,7 @@ namespace ETestUI
         {
             if (questionsBox.SelectedIndex != -1)
             {
-                DataBaseController.deleteQuestion(questions[questionsBox.SelectedIndex], Properties.Settings.Default.Language);
+                DataBaseService.deleteQuestion(questions[questionsBox.SelectedIndex], Properties.Settings.Default.Language);
                 questionsBox.Items.RemoveAt(questionsBox.SelectedIndex);
             }
         }
