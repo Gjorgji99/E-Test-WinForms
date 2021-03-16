@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ETestUI
+namespace ETestForms
 {
     public partial class PasswordForm : Form
     {

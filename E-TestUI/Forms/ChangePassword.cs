@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ETestUI.Forms
+namespace ETestForms.Forms
 {
     public partial class ChangePassword : Form
     {
@@ -38,6 +38,11 @@ namespace ETestUI.Forms
             {
                 MessageBox.Show(rm.GetString("error"));
             }
+        }
+
+        private void ChangePassword_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

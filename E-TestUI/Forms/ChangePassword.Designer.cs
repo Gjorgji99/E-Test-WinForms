@@ -1,5 +1,5 @@
 ﻿
-namespace ETestUI.Forms
+namespace ETestForms.Forms
 {
     partial class ChangePassword
     {
@@ -90,6 +90,7 @@ namespace ETestUI.Forms
             this.Controls.Add(this.cancel);
             this.Controls.Add(this.Accept);
             this.Name = "ChangePassword";
+            this.Load += new System.EventHandler(this.ChangePassword_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
