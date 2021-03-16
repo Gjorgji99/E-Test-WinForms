@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using EtestLibrary.Models;
 using EtestLibrary.Services;
-using ETestUI;
+using ETestForms;
 
-namespace ETestUI
+namespace ETestForms
 {
     public partial class QuestionsForm : Form
     {

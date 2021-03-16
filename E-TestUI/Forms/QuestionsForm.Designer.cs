@@ -1,4 +1,4 @@
-﻿namespace ETestUI
+﻿namespace ETestForms
 {
     partial class QuestionsForm
     {
