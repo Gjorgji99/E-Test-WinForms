@@ -3,14 +3,9 @@
 @{
     ViewData["Title"] = "Home page";
 }
-@foreach (var question in Model.questions)
-{
-    <h2>
-        @question.Title
-        
-    </h2>
-    <p>
-        @question.Correct
-    </p>
-}
+
+<form method="POST">
+    <input type="name" name="name">
+    <input type="submit">
+</form>
 
