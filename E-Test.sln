@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-TestForms", "E-TestUI\E-TestForms.csproj", "{86D69385-0D94-4B45-AA3D-625DDDC214BE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "E-TestForms", "E-TestForms\E-TestForms.csproj", "{86D69385-0D94-4B45-AA3D-625DDDC214BE}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EtestLibrary", "EtestLibrary\EtestLibrary.csproj", "{8B568C78-5699-4EB4-97DA-A312C00B72D8}"
 EndProject
