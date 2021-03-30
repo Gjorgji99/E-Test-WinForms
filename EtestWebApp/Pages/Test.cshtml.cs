@@ -1,3 +1,4 @@
+using EtestLibrary.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
@@ -10,7 +11,7 @@ namespace EtestWebApp.Pages
 {
     public class TestModel : PageModel
     {
-        Etest test = new Etest(3,mk-MK);
+        //Etest test = new Etest(3 ,"mk-MK");
         private readonly ILogger<PrivacyModel> _logger;
         [BindProperty]
         private string studentName {set;get;}
