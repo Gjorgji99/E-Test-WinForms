@@ -3,16 +3,19 @@
 @{
     ViewData["Title"] = "Test";
 }
-<input type="radio" id="male" name="offer" value="">
-<label for="male"></label><br>
-<input type="radio" id="female" name="offer" value="">
-<label for="female"></label><br>
-<input type="radio" id="other" name="offer" value="">
-<label for="female"></label><br>
-<input type="radio" id="other" name="offer" value="">
-<label></label><br>
-<input type="submit" id="other" name="offer" value="">
-
+@ViewData["StudentName"]
+<form method="POST">
+<h2>@Model.question.Title</h2>
+<input type="radio" name="answer" value="@Model.question.Offer1">
+<label>@Model.question.Offer1</label><br>
+<input type="radio" name="answer" value="@Model.question.Offer2">
+<label>@Model.question.Offer2</label><br>
+<input type="radio" name="answer" value="@Model.question.Offer3">
+<label>@Model.question.Offer3</label><br>
+<input type="radio" name="answer" value="@Model.question.Offer4">
+<label>@Model.question.Offer4</label><br>
+<input type="submit" >
+</form>
 
 
 

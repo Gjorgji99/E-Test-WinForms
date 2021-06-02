@@ -15,12 +15,5 @@ namespace EtestWebApp.Pages
         {
             _logger = logger;
         }
-
-        public void OnGet()
-        {
-        }
-        public void OnPost(){
-            string name = Request.Form["name"];
-        }
     }
 }
