@@ -26,7 +26,8 @@ namespace EtestWebApp.Pages
             question = test.Load;
         }
         public void OnPost(string answer){
-
+            question = test.Next(answer);
+            
         }
     }
 }
