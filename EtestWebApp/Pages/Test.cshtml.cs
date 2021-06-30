@@ -25,9 +25,13 @@ namespace EtestWebApp.Pages
             ViewData["StudentName"] = name;
             question = test.Load;
         }
-        public void OnPost(string answer){
+        public IActionResult OnPost(string answer)
+        {
             question = test.Next(answer);
-            
+            if(test.Count == test.NumberOfQuestions)
+            {
+                return new RedirectToPageResult("Index");
+            }
         }
     }
 }
