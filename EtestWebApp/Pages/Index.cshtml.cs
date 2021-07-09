@@ -1,6 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using EtestLibrary.Models;
+using EtestLibrary.Services;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,11 +13,18 @@ namespace EtestWebApp.Pages
 { 
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel()
         {
-            _logger = logger;
+
+        }
+        
+        public ActionResult OnGet(string name){
+            if(name == null){
+                return Page();
+            }
+            HttpContext.Session.SetString("SessionUser",JsonConvert.SerializeObject(new User(name,new Etest("3" ,"mk-MK"))));
+            return RedirectToPage("/Test");
         }
     }
 }

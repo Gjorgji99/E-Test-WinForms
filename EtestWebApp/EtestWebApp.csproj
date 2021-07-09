@@ -6,6 +6,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\EtestLibrary\EtestLibrary.csproj" />
+     <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
   </ItemGroup>
-
 </Project>
