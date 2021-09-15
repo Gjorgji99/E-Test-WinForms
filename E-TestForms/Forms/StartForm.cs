@@ -1,13 +1,10 @@
-﻿using System;
+﻿using EtestLibrary.Models;
+using EtestLibrary.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ETestForms
@@ -25,7 +22,7 @@ namespace ETestForms
                 = new ComponentResourceManager(this.GetType());
             component_resource_manager.ApplyResources(
                 this, "$this", culture_info);
-            
+
             foreach (Control ctl in this.Controls)
             {
                 component_resource_manager.ApplyResources(
@@ -38,7 +35,7 @@ namespace ETestForms
             Properties.Settings.Default.Language = language;
             Properties.Settings.Default.Save();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
-            if(language == "en")
+            if (language == "en")
             {
                 english.Enabled = false;
                 macedonian.Enabled = true;
@@ -51,7 +48,7 @@ namespace ETestForms
         }
         private void macedonian_Click(object sender, EventArgs e)
         {
-            changeLanguage("mk-MK");   
+            changeLanguage("mk-MK");
         }
 
         private void english_Click(object sender, EventArgs e)
@@ -61,6 +58,12 @@ namespace ETestForms
 
         private void startButton_Click(object sender, EventArgs e)
         {
+            DataBaseService.addQuestion(new Question("Што е RAM?", "Read-Only Memory", "Random-Access Memory", "Read-Access Memory", "Random - Only Memory", "Random-Access Memory", Properties.Settings.Default.Language));
+            DataBaseService.addQuestion(new Question("Кој од овие не е програмски јазик?", "Java", "JavaSript", "C++", "Pascal", "JavaSript", Properties.Settings.Default.Language));
+            DataBaseService.addQuestion(new Question("Кога е создаден Android?", "2007", "2003", "2005", "2004", "2005", Properties.Settings.Default.Language));
+            DataBaseService.addQuestion(new Question("Програмскиот јазик Pascal го создал?", "Dennis Ritche", "Richard Stallman", "Niklaus Wirth", "Brendan Eich", "Niklaus Wirth", Properties.Settings.Default.Language));
+            DataBaseService.addQuestion(new Question("Кој е основач на Linux-Kernel?", "Linus Torvalds", "Richard Stallman", "Bill Gates", "Dennis Ritchie", "Linus Torvalds", Properties.Settings.Default.Language));
+
             QuestionsForm test = new QuestionsForm();
             test.StudentName = Tbime.Text;
             this.Hide();
@@ -75,7 +78,8 @@ namespace ETestForms
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-                changeLanguage(Properties.Settings.Default.Language);
+            
+            changeLanguage(Properties.Settings.Default.Language);
         }
     }
 }

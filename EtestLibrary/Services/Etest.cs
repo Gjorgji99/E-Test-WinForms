@@ -2,47 +2,48 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-
+using System.Linq;
 namespace EtestLibrary.Services
 {
     public class Etest
     {
-        private List<Question> questions = new List<Question>();
+        private Dictionary<Question,Boolean> questions = new Dictionary<Question,Boolean>();
         int count = 0;
         int numberOfQuestions;
         public int Points { get; set; } = 0;
         public Etest(string numberOfQuestions,string language)
         {
+            QuestionContext qC = new QuestionContext();
             this.NumberOfQuestions = Int32.Parse(numberOfQuestions);
             List<Question> temp = DataBaseService.loadQuestions(language);
             int[] numbers = random(temp.Count);
             for (int i = 0; i < this.numberOfQuestions; i++)
             {
-                questions.Add(temp[numbers[i]]);
+                questions.Add(temp[numbers[i]],false);
             }
         }
-        public Question Load => questions[Count];
+        public Question Load => questions.ElementAt(Count).Key;
         public void checkQuestion(string choose)
         {
-            if (choose == questions[Count].Correct)
+            if (choose == questions.ElementAt(count).Key.Correct)
             {
                 Points++;
-                questions[Count].Point = true;
+                questions[questions.ElementAt(count).Key] = true;
             }
         }
         public Question Next(string choose)
         {
             checkQuestion(choose);
-            return questions[++Count];
+            return questions.ElementAt(++Count).Key;
         }
         public Question Back()
         {
-            if (questions[--Count].Point)
+            if (questions[questions.ElementAt(count).Key])
             {
-                questions[Count].Point = false;
+                questions[questions.ElementAt(Count).Key] = false;
                 Points--;
             }
-            return questions[Count];
+            return questions.ElementAt(Count).Key;
         }
 
         public int Count { get => count; set => count = value; }

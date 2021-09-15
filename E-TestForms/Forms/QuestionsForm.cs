@@ -1,17 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Resources;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using EtestLibrary.Models;
+﻿using EtestLibrary.Models;
 using EtestLibrary.Services;
-using ETestForms;
+using System;
+using System.Resources;
+using System.Windows.Forms;
 
 namespace ETestForms
 {
@@ -24,7 +15,7 @@ namespace ETestForms
         ResourceManager rm = new ResourceManager(typeof(QuestionsForm));
 
         private string studentName;
-        Etest test = new Etest(Properties.Settings.Default.NumberOfQuestions,Properties.Settings.Default.Language);
+        Etest test = new Etest(Properties.Settings.Default.NumberOfQuestions, Properties.Settings.Default.Language);
 
         public Etest Test { get => test; set => test = value; }
         public string StudentName { get => studentName; set => studentName = value; }
@@ -32,10 +23,10 @@ namespace ETestForms
         private void load(Question q)
         {
             lprasanje.Text = rm.GetString("lprasanje.Text") + q.Title;
-            radioButton1.Text = q.Offer1;
-            radioButton2.Text = q.Offer2;
-            radioButton3.Text = q.Offer3;
-            radioButton4.Text = q.Offer4;
+            radioButton1.Text = q.Offer0;
+            radioButton2.Text = q.Offer1;
+            radioButton3.Text = q.Offer2;
+            radioButton4.Text = q.Offer3;
 
         }
         private string Radiocheck1()
@@ -57,7 +48,7 @@ namespace ETestForms
         }
         private void nextButton_Click(object sender, EventArgs e)
         {
-            
+
             if (Test.Count == Test.NumberOfQuestions - 2)
             {
                 nextButton.Text = rm.GetString("finish");
@@ -66,7 +57,7 @@ namespace ETestForms
             {
                 backButton.Enabled = true;
             }
-            if (Test.Count == Test.NumberOfQuestions-1)
+            if (Test.Count == Test.NumberOfQuestions - 1)
             {
                 test.checkQuestion(Radiocheck1());
                 this.Hide();
