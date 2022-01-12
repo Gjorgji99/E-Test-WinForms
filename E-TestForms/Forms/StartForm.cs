@@ -58,12 +58,6 @@ namespace ETestForms
 
         private void startButton_Click(object sender, EventArgs e)
         {
-            DataBaseService.addQuestion(new Question("Што е RAM?", "Read-Only Memory", "Random-Access Memory", "Read-Access Memory", "Random - Only Memory", "Random-Access Memory", Properties.Settings.Default.Language));
-            DataBaseService.addQuestion(new Question("Кој од овие не е програмски јазик?", "Java", "JavaSript", "C++", "Pascal", "JavaSript", Properties.Settings.Default.Language));
-            DataBaseService.addQuestion(new Question("Кога е создаден Android?", "2007", "2003", "2005", "2004", "2005", Properties.Settings.Default.Language));
-            DataBaseService.addQuestion(new Question("Програмскиот јазик Pascal го создал?", "Dennis Ritche", "Richard Stallman", "Niklaus Wirth", "Brendan Eich", "Niklaus Wirth", Properties.Settings.Default.Language));
-            DataBaseService.addQuestion(new Question("Кој е основач на Linux-Kernel?", "Linus Torvalds", "Richard Stallman", "Bill Gates", "Dennis Ritchie", "Linus Torvalds", Properties.Settings.Default.Language));
-
             QuestionsForm test = new QuestionsForm();
             test.StudentName = Tbime.Text;
             this.Hide();

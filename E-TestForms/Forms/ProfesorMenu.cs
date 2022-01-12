@@ -37,7 +37,7 @@ namespace ETestForms
             {
                 Question question = new Question(titleBox.Text, tb1.Text, tb2.Text, tb3.Text, tb4.Text, correctBox.Text,Properties.Settings.Default.Language);
                 questionsBox.Items.Add(question.ToString());
-                DataBaseService.addQuestion(question);
+                DataBaseService.addQuestion(question, Properties.Settings.Default.Language);
             }
             else
             {

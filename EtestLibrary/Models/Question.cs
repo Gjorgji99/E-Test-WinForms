@@ -6,13 +6,8 @@ using System.Text;
 
 namespace EtestLibrary.Models
 {
-    [Table("question")]
     public class Question
     {
-        [Column("questionID")]
-        [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption
-        .Identity)]
         long id;
         string title;
         string offer0;

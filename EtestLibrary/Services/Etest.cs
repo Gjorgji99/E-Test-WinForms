@@ -13,7 +13,6 @@ namespace EtestLibrary.Services
         public int Points { get; set; } = 0;
         public Etest(string numberOfQuestions,string language)
         {
-            QuestionContext qC = new QuestionContext();
             this.NumberOfQuestions = Int32.Parse(numberOfQuestions);
             List<Question> temp = DataBaseService.loadQuestions(language);
             int[] numbers = random(temp.Count);
