@@ -1,13 +1,10 @@
-﻿using System;
+﻿using EtestLibrary.Models;
+using EtestLibrary.Services;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Globalization;
-using System.Linq;
-using System.Text;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace ETestForms
@@ -25,7 +22,7 @@ namespace ETestForms
                 = new ComponentResourceManager(this.GetType());
             component_resource_manager.ApplyResources(
                 this, "$this", culture_info);
-            
+
             foreach (Control ctl in this.Controls)
             {
                 component_resource_manager.ApplyResources(
@@ -38,7 +35,7 @@ namespace ETestForms
             Properties.Settings.Default.Language = language;
             Properties.Settings.Default.Save();
             Thread.CurrentThread.CurrentUICulture = new CultureInfo(language);
-            if(language == "en")
+            if (language == "en")
             {
                 english.Enabled = false;
                 macedonian.Enabled = true;
@@ -51,7 +48,7 @@ namespace ETestForms
         }
         private void macedonian_Click(object sender, EventArgs e)
         {
-            changeLanguage("mk-MK");   
+            changeLanguage("mk-MK");
         }
 
         private void english_Click(object sender, EventArgs e)
@@ -75,7 +72,8 @@ namespace ETestForms
 
         private void StartForm_Load(object sender, EventArgs e)
         {
-                changeLanguage(Properties.Settings.Default.Language);
+            
+            changeLanguage(Properties.Settings.Default.Language);
         }
     }
 }
