@@ -22,7 +22,7 @@ namespace ETestForms
         private void ProfesorskoMeni_Load(object sender, EventArgs e)
         {
             questionsBox.MultiColumn = true;
-            questions = DataBaseService.loadQuestions(Properties.Settings.Default.Language);
+            questions = DataBaseService.loadQuestionsByLanguage(Properties.Settings.Default.Language);
             foreach (var a in questions)
             {
                 questionsBox.Items.Add(a.ToString());

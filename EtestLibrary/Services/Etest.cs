@@ -14,12 +14,7 @@ namespace EtestLibrary.Services
         public Etest(string numberOfQuestions,string language)
         {
             this.NumberOfQuestions = Int32.Parse(numberOfQuestions);
-            List<Question> temp = DataBaseService.loadQuestions(language);
-            int[] numbers = random(temp.Count);
-            for (int i = 0; i < this.numberOfQuestions; i++)
-            {
-                questions.Add(temp[numbers[i]],false);
-            }
+            DataBaseService.loadQuestionsByLanguageAndNoQ(language,numberOfQuestions).ForEach(q => questions.Add(q, false));
         }
         public Question Load => questions.ElementAt(Count).Key;
         public void checkQuestion(string choose)
@@ -48,18 +43,6 @@ namespace EtestLibrary.Services
         public int Count { get => count; set => count = value; }
         public int NumberOfQuestions { get => numberOfQuestions; set => numberOfQuestions = value; }
 
-        int[] random(int number)
-        {
-            List<int> a = new List<int> { };
-            Random r = new Random();
-            for (int i = 0; i < numberOfQuestions; i++)
-            {
-                int n;
-                do n = r.Next(0, number);
-                while (a.Contains(n));
-                a.Add(n);
-            }
-            return a.ToArray();
-        }
+
     }
 }

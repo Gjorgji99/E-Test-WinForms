@@ -12,8 +12,7 @@ namespace EtestLibrary.Services
     {
 
         public static string ConnectionString { get; private set; }
-
-        public static List<Question> loadQuestions(string language)
+        public static List<Question> loadQuestionsByLanguage(string language)
         {
             var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
             ConnectionString = "Data Source = " + path + ";";
@@ -24,6 +23,38 @@ namespace EtestLibrary.Services
                 connection.Open();
                 var command = new SQLiteCommand(stringSql, connection);
                 command.Parameters.AddWithValue("@language", language);
+                using (SQLiteDataReader sqlReader = command.ExecuteReader())
+                {
+                    while (sqlReader.Read())
+                    {
+                        string title = (string)sqlReader["title"];
+                        string offer1 = (string)sqlReader["offer0"];
+                        string offer2 = (string)sqlReader["offer1"];
+                        string offer3 = (string)sqlReader["offer2"];
+                        string offer4 = (string)sqlReader["offer3"];
+                        string correct = (string)sqlReader["correct"];
+                        temp.Add(new Question(title, offer1, offer2, offer3, offer4, correct, language));
+
+                    }
+                }
+                return temp;
+            }
+        }
+
+        public static List<Question> loadQuestionsByLanguageAndNoQ(string language, string numberOfQuestions)
+        {
+            var path = Path.Combine(Environment.CurrentDirectory, "dbEtest.db");
+            ConnectionString = "Data Source = " + path + ";";
+            string stringSql = "SELECT * FROM questions WHERE language = @language ORDER BY RANDOM() LIMIT @numberOfQuestions;";
+            if (numberOfQuestions == "0")
+                stringSql = "SELECT * FROM questions WHERE language = @language";
+            List<Question> temp = new List<Question>();
+            using (SQLiteConnection connection = new SQLiteConnection(ConnectionString))
+            {
+                connection.Open();
+                var command = new SQLiteCommand(stringSql, connection);
+                command.Parameters.AddWithValue("@language", language);
+                command.Parameters.AddWithValue("@numberOfQuestions", numberOfQuestions);
                 using (SQLiteDataReader sqlReader = command.ExecuteReader())
                 {
                     while (sqlReader.Read())
