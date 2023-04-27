@@ -1,6 +1,6 @@
-﻿using ETestForms.Forms;
-using EtestLibrary.Models;
-using EtestLibrary.Services;
+﻿using Etest.Data.Models;
+using Etest.Data.Services;
+using ETestForms.Forms;
 using System;
 using System.Collections.Generic;
 using System.Resources;
@@ -41,7 +41,6 @@ namespace ETestForms
             }
             else
             {
-
                 MessageBox.Show(rm.GetString("correctAnswer"));
             }
         }

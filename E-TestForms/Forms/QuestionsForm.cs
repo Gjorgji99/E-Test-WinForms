@@ -1,8 +1,9 @@
-﻿using EtestLibrary.Models;
-using EtestLibrary.Services;
-using System;
+﻿using System;
 using System.Resources;
 using System.Windows.Forms;
+using Etest.Data.Models;
+using Etest.Data.Services;
+
 
 namespace ETestForms
 {
@@ -15,9 +16,9 @@ namespace ETestForms
         ResourceManager rm = new ResourceManager(typeof(QuestionsForm));
 
         private string studentName;
-        Etest test = new Etest(Properties.Settings.Default.NumberOfQuestions, Properties.Settings.Default.Language);
+        ETestService test = new ETestService(Properties.Settings.Default.NumberOfQuestions, Properties.Settings.Default.Language);
 
-        public Etest Test { get => test; set => test = value; }
+        public ETestService Test { get => test; set => test = value; }
         public string StudentName { get => studentName; set => studentName = value; }
 
         private void load(Question q)

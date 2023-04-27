@@ -1,17 +1,14 @@
-﻿using EtestLibrary.Models;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Linq;
-namespace EtestLibrary.Services
+﻿using Etest.Data.Models;
+
+namespace Etest.Data.Services
 {
-    public class Etest
+    public class ETestService
     {
         private Dictionary<Question,Boolean> questions = new Dictionary<Question,Boolean>();
         int count = 0;
         int numberOfQuestions;
         public int Points { get; set; } = 0;
-        public Etest(string numberOfQuestions,string language)
+        public ETestService(string numberOfQuestions,string language)
         {
             this.NumberOfQuestions = Int32.Parse(numberOfQuestions);
             DataBaseService.loadQuestionsByLanguageAndNoQ(language,numberOfQuestions).ForEach(q => questions.Add(q, false));
@@ -37,7 +34,7 @@ namespace EtestLibrary.Services
                 questions[questions.ElementAt(Count).Key] = false;
                 Points--;
             }
-            return questions.ElementAt(Count).Key;
+            return questions.ElementAt(--Count).Key;
         }
 
         public int Count { get => count; set => count = value; }

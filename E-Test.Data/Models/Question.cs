@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Text;
 
-namespace EtestLibrary.Models
+namespace Etest.Data.Models
 {
     public class Question
     {
@@ -16,15 +16,13 @@ namespace EtestLibrary.Models
         string offer3;
         string language;
         string correct;
-        public Question(){}
-
         public Question(string title, string offer0, string offer1, string offer2, string offer3, string correct, string language)
         {
             this.title = title;
-            this.Offer0 = offer0;
-            this.Offer1 = offer1;
-            this.Offer2 = offer2;
-            this.Offer3 = offer3;
+            this.offer0 = offer0;
+            this.offer1 = offer1;
+            this.offer2 = offer2;
+            this.offer3 = offer3;
             this.language = language;
             this.correct = correct;
         }
